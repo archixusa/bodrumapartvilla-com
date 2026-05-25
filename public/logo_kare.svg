@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BodrumApart Villa">
+  <title>BodrumApart Villa</title>
+  <path d="M8 32 L32 10 L56 32 L50 32 L50 46 L14 46 L14 32 Z" fill="#1B3A8C"/>
+  <rect x="28" y="34" width="8" height="8" fill="#E8A547"/>
+  <ellipse cx="32" cy="54" rx="26" ry="5" fill="#6B8FE0"/>
+  <ellipse cx="32" cy="52.5" rx="18" ry="1.5" fill="#BFD0F2"/>
+</svg>
