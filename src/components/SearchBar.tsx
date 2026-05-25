@@ -36,30 +36,54 @@ export function SearchBar({ compact = false }: { compact?: boolean }) {
   return (
     <form
       onSubmit={submit}
-      className={`grid w-full gap-2 rounded-xl border border-[var(--color-border)] bg-white p-3 shadow-cardHover ${compact ? "" : "md:p-4"}`}
+      className={clsx(
+        "glass-strong relative w-full rounded-3xl p-3 sm:p-4",
+        compact ? "" : "shadow-glass"
+      )}
     >
+      {/* Top gold seam */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-6 top-0 h-px"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent, rgba(217,178,110,0.5), transparent)",
+        }}
+      />
+
       <div
         role="tablist"
         aria-label={t("searchType")}
-        className="flex w-full items-center gap-1 rounded-md bg-sand-50 p-1 sm:max-w-md"
+        className="flex w-full items-center gap-1 rounded-2xl bg-white/55 p-1 sm:max-w-md"
       >
         <TypeTab active={type === "all"} onClick={() => setType("all")}>
           {t("searchTypeAll")}
         </TypeTab>
-        <TypeTab active={type === "villa"} onClick={() => setType("villa")} icon={<Home className="h-3.5 w-3.5" />}>
+        <TypeTab
+          active={type === "villa"}
+          onClick={() => setType("villa")}
+          icon={<Home className="h-3.5 w-3.5" />}
+        >
           {t("searchTypeVilla")}
         </TypeTab>
-        <TypeTab active={type === "apart"} onClick={() => setType("apart")} icon={<Building2 className="h-3.5 w-3.5" />}>
+        <TypeTab
+          active={type === "apart"}
+          onClick={() => setType("apart")}
+          icon={<Building2 className="h-3.5 w-3.5" />}
+        >
           {t("searchTypeApart")}
         </TypeTab>
       </div>
 
-      <div className="grid gap-2 md:grid-cols-[1.4fr_1fr_1fr_0.9fr_auto]">
-        <Field icon={<MapPin className="h-4 w-4" />} label={t("searchDistrict")}>
+      <div className="mt-3 grid gap-2 md:grid-cols-[1.4fr_1fr_1fr_0.9fr_auto]">
+        <Field
+          icon={<MapPin className="h-4 w-4" />}
+          label={t("searchDistrict")}
+        >
           <select
             value={district}
             onChange={(e) => setDistrict(e.target.value)}
-            className="input-base border-none p-0 text-base font-medium focus:ring-0"
+            className="w-full border-none bg-transparent p-0 text-sm font-semibold text-ink focus:outline-none focus:ring-0"
           >
             <option value="">{t("searchDistrictAny")}</option>
             {districts.map((d) => (
@@ -75,7 +99,7 @@ export function SearchBar({ compact = false }: { compact?: boolean }) {
             min={today}
             value={checkin}
             onChange={(e) => setCheckin(e.target.value)}
-            className="input-base border-none p-0 text-base font-medium focus:ring-0"
+            className="w-full border-none bg-transparent p-0 text-sm font-semibold text-ink focus:outline-none focus:ring-0"
           />
         </Field>
         <Field icon={<Calendar className="h-4 w-4" />} label={t("searchCheckout")}>
@@ -84,14 +108,14 @@ export function SearchBar({ compact = false }: { compact?: boolean }) {
             min={checkin || today}
             value={checkout}
             onChange={(e) => setCheckout(e.target.value)}
-            className="input-base border-none p-0 text-base font-medium focus:ring-0"
+            className="w-full border-none bg-transparent p-0 text-sm font-semibold text-ink focus:outline-none focus:ring-0"
           />
         </Field>
         <Field icon={<Users className="h-4 w-4" />} label={t("searchGuests")}>
           <select
             value={guests}
             onChange={(e) => setGuests(Number(e.target.value))}
-            className="input-base border-none p-0 text-base font-medium focus:ring-0"
+            className="w-full border-none bg-transparent p-0 text-sm font-semibold text-ink focus:outline-none focus:ring-0"
           >
             {[1, 2, 3, 4, 5, 6, 7, 8, 10, 12].map((n) => (
               <option key={n} value={n}>
@@ -100,7 +124,7 @@ export function SearchBar({ compact = false }: { compact?: boolean }) {
             ))}
           </select>
         </Field>
-        <button type="submit" className="btn-primary h-full min-h-[56px] !rounded-md">
+        <button type="submit" className="btn-primary h-full min-h-[60px] !rounded-2xl">
           <Search className="h-5 w-5" />
           <span className="hidden sm:inline">{t("searchCta")}</span>
           <span className="sm:hidden">{c("search")}</span>
@@ -128,8 +152,10 @@ function TypeTab({
       aria-selected={active}
       onClick={onClick}
       className={clsx(
-        "inline-flex flex-1 items-center justify-center gap-1.5 rounded-md px-3 py-2 text-xs font-semibold transition",
-        active ? "bg-navy-900 text-white shadow" : "text-navy-900 hover:bg-white"
+        "relative inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl px-3 py-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] transition-all duration-300",
+        active
+          ? "bg-ink text-white shadow-lg"
+          : "text-ink/70 hover:bg-white/60 hover:text-ink"
       )}
     >
       {icon}
@@ -148,10 +174,12 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <label className="flex w-full cursor-pointer items-center gap-3 rounded-md border border-[var(--color-border)] bg-white px-3 py-2 transition focus-within:border-navy-600 focus-within:ring-2 focus-within:ring-navy-200">
-      <span className="text-navy-600">{icon}</span>
+    <label className="group flex w-full cursor-pointer items-center gap-3 rounded-2xl bg-white/55 px-3 py-2.5 transition-all duration-300 hover:bg-white/80 focus-within:bg-white focus-within:ring-2 focus-within:ring-accent-400/40">
+      <span className="text-accent-500 transition-colors group-hover:text-accent-600">
+        {icon}
+      </span>
       <span className="flex w-full flex-col">
-        <span className="text-[10px] font-semibold uppercase tracking-wide text-muted">
+        <span className="font-mono text-[9px] font-bold uppercase tracking-[0.22em] text-muted">
           {label}
         </span>
         {children}

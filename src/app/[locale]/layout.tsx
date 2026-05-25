@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -10,11 +10,25 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { AnalyticsScripts, GtmNoScript } from "@/components/Analytics";
 
-const jakarta = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-sans",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const interDisplay = Inter({
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  variable: "--font-display",
+  weight: ["600", "700", "800", "900"],
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  variable: "--font-mono",
+  weight: ["400", "500", "600"],
 });
 
 const SITE_URL =
@@ -76,21 +90,24 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={jakarta.variable}>
+    <html
+      lang={locale}
+      className={`${inter.variable} ${interDisplay.variable} ${jetBrainsMono.variable}`}
+    >
       <head>
         <AnalyticsScripts />
       </head>
-      <body className="bg-white font-sans text-ink antialiased">
+      <body className="bg-bg-base font-sans text-ink antialiased">
         <GtmNoScript />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <a
             href="#main"
-            className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-navy-900 focus:px-3 focus:py-2 focus:text-white"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-ink focus:px-3 focus:py-2 focus:text-white"
           >
             Skip to content
           </a>
           <Header />
-          <main id="main" className="min-h-[60vh]">
+          <main id="main" className="relative min-h-[60vh]">
             {children}
           </main>
           <Footer />
