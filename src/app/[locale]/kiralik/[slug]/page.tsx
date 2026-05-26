@@ -17,6 +17,7 @@ import { ReservationForm } from "@/lib/reservation-form";
 import { PropertyCard } from "@/components/PropertyCard";
 import { JsonLd } from "@/components/JsonLd";
 import { FAQ } from "@/components/FAQ";
+import { ApartmentReviews } from "@/components/ApartmentReviews";
 import {
   properties,
   getProperty,
@@ -298,6 +299,8 @@ export default async function PropertyDetailPage({
             <div className="mt-4">
               <FAQ items={detailFaq} />
             </div>
+
+            <ApartmentReviews propertySlug={property.slug} locale={locale} />
           </div>
 
           <aside className="lg:sticky lg:top-20 lg:self-start">
