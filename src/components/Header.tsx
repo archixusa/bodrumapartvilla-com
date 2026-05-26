@@ -69,10 +69,10 @@ export function Header() {
             />
             <span className="hidden flex-col leading-tight sm:flex">
               <span className="text-display text-sm font-extrabold tracking-tight text-ink">
-                BodrumApart
+                Bodrumapartvilla
               </span>
               <span className="font-mono text-[9px] font-bold uppercase tracking-[0.28em] text-accent-600">
-                Villa
+                Butik Konaklama
               </span>
             </span>
           </Link>
@@ -140,7 +140,7 @@ export function Header() {
               href="/evinizi-kiraya-verin"
               className="hidden xl:inline-flex items-center gap-1.5 rounded-full border border-accent-500/40 px-4 py-2 text-xs font-semibold uppercase tracking-kicker text-accent-500 transition hover:bg-accent-500 hover:text-white"
             >
-              Mülk Sahipleri
+              Villanızı Yönetmek
             </Link>
             <a
               href={`https://wa.me/${c("whatsappNumber")}`}
@@ -182,7 +182,7 @@ export function Header() {
               onClick={() => setOpen(false)}
               className="block rounded-full px-4 py-2.5 text-sm font-bold text-accent-600 hover:bg-accent-500/10"
             >
-              Mülk Sahipleri →
+              Villanızı Yönetmek →
             </Link>
             <div className="flex items-center gap-2 pt-2">
               {routing.locales.map((l) => (

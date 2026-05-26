@@ -9,6 +9,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { AnalyticsScripts, GtmNoScript } from "@/components/Analytics";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
@@ -112,6 +113,7 @@ export default async function LocaleLayout({
           </main>
           <Footer />
           <WhatsAppFab />
+          <CookieConsent />
         </NextIntlClientProvider>
       </body>
     </html>

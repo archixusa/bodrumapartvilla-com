@@ -46,10 +46,10 @@ export function Footer() {
               />
               <div className="flex flex-col leading-tight">
                 <span className="text-display text-base font-extrabold tracking-tight text-ink">
-                  BodrumApart
+                  Bodrumapartvilla
                 </span>
                 <span className="font-mono text-[10px] font-bold uppercase tracking-[0.28em] text-accent-600">
-                  Villa
+                  Butik Konaklama
                 </span>
               </div>
             </div>
@@ -120,7 +120,7 @@ export function Footer() {
           <FooterColumn title={t("company")} className="lg:col-span-3">
             <FooterLink href="/hakkimizda">{nav("about")}</FooterLink>
             <FooterLink href="/iletisim">{nav("contact")}</FooterLink>
-            <FooterLink href="/evinizi-kiraya-verin">Mülkünüzü Bize Emanet Edin</FooterLink>
+            <FooterLink href="/evinizi-kiraya-verin">Villanızı Bizimle Yönetin</FooterLink>
             <FooterLink href="/blog">{nav("blog")}</FooterLink>
             <FooterLink href="/sss">FAQ</FooterLink>
             <FooterLink href="/kvkk">{t("kvkk")}</FooterLink>
