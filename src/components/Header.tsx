@@ -136,6 +136,12 @@ export function Header() {
                 </div>
               )}
             </div>
+            <Link
+              href="/evinizi-kiraya-verin"
+              className="hidden xl:inline-flex items-center gap-1.5 rounded-full border border-accent-500/40 px-4 py-2 text-xs font-semibold uppercase tracking-kicker text-accent-500 transition hover:bg-accent-500 hover:text-white"
+            >
+              Mülk Sahipleri
+            </Link>
             <a
               href={`https://wa.me/${c("whatsappNumber")}`}
               target="_blank"
@@ -171,6 +177,13 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/evinizi-kiraya-verin"
+              onClick={() => setOpen(false)}
+              className="block rounded-full px-4 py-2.5 text-sm font-bold text-accent-600 hover:bg-accent-500/10"
+            >
+              Mülk Sahipleri →
+            </Link>
             <div className="flex items-center gap-2 pt-2">
               {routing.locales.map((l) => (
                 <Link

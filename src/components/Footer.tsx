@@ -120,6 +120,7 @@ export function Footer() {
           <FooterColumn title={t("company")} className="lg:col-span-3">
             <FooterLink href="/hakkimizda">{nav("about")}</FooterLink>
             <FooterLink href="/iletisim">{nav("contact")}</FooterLink>
+            <FooterLink href="/evinizi-kiraya-verin">Mülkünüzü Bize Emanet Edin</FooterLink>
             <FooterLink href="/blog">{nav("blog")}</FooterLink>
             <FooterLink href="/sss">FAQ</FooterLink>
             <FooterLink href="/kvkk">{t("kvkk")}</FooterLink>
