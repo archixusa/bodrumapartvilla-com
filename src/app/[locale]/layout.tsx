@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../globals.css";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/Header";
@@ -113,6 +114,7 @@ export default async function LocaleLayout({
           <Footer />
           <WhatsAppFab />
         </NextIntlClientProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
