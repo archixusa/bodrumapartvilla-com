@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { Gallery } from "@/components/Gallery";
-import { BookingForm } from "@/components/BookingForm";
+import { ReservationForm } from "@/lib/reservation-form";
 import { PropertyCard } from "@/components/PropertyCard";
 import { JsonLd } from "@/components/JsonLd";
 import { FAQ } from "@/components/FAQ";
@@ -301,14 +301,11 @@ export default async function PropertyDetailPage({
           </div>
 
           <aside className="lg:sticky lg:top-20 lg:self-start">
-            <BookingForm
+            <ReservationForm
+              siteName="bodrumapartvilla"
               propertySlug={property.slug}
-              propertyTitle={title}
-              propertyType={property.type}
-              capacity={property.capacity}
-              highSeasonPrice={property.highSeasonPrice}
-              lowSeasonPrice={property.lowSeasonPrice}
               whatsappNumber={c("whatsappNumber")}
+              kvkkUrl="/kvkk"
             />
           </aside>
         </div>
