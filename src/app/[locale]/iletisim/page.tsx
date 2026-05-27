@@ -1,5 +1,39 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Phone, Mail, MessageCircle, MapPin } from "lucide-react";
+import { JsonLd } from "@/components/JsonLd";
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://bodrumapartvilla.com";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isTr = locale === "tr";
+  const url =
+    locale === "tr"
+      ? `${SITE_URL}/iletisim`
+      : `${SITE_URL}/${locale}/iletisim`;
+  return {
+    title: isTr ? "İletişim" : "Contact",
+    description: isTr
+      ? "Konsiyerj ekibimize doğrudan yazın. Tarihleriniz, özel istekleriniz ya da koleksiyonumuza dair sorular için yanıt süremiz 24 saattir."
+      : "Write to our concierge directly. Replies within 24 hours for dates, particular requests or any question about the collection.",
+    alternates: { canonical: url },
+    robots: { index: true, follow: true },
+    openGraph: {
+      title: isTr ? "İletişim — Bodrumapartvilla" : "Contact — Bodrumapartvilla",
+      description: isTr
+        ? "Konsiyerj ekibimize doğrudan ulaşabilirsiniz."
+        : "Reach our concierge directly.",
+      url,
+      type: "website",
+    },
+  };
+}
 
 export default async function Page({
   params,
@@ -12,8 +46,32 @@ export default async function Page({
   const c = await getTranslations({ locale, namespace: "common" });
   const isTr = locale === "tr";
 
+  const contactLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: isTr ? "Bodrumapartvilla İletişim" : "Bodrumapartvilla Contact",
+    url:
+      locale === "tr"
+        ? `${SITE_URL}/iletisim`
+        : `${SITE_URL}/${locale}/iletisim`,
+    publisher: {
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/#business`,
+      name: "Bodrumapartvilla",
+      telephone: c("phone"),
+      email: c("email"),
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bodrum",
+        addressRegion: "Muğla",
+        addressCountry: "TR",
+      },
+    },
+  };
+
   return (
     <section className="section">
+      <JsonLd data={contactLd} />
       <div className="container-page max-w-3xl">
         <h1>{nav("contact")}</h1>
         <p className="mt-3 text-muted">

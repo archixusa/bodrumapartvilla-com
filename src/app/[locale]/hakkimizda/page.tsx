@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MapPin, Eye, ConciergeBell, MessageCircle, Phone, Mail } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
+import { JsonLd } from "@/components/JsonLd";
 import { Link } from "@/i18n/routing";
 
 const SITE_URL =
@@ -38,8 +39,25 @@ export default async function Page({
   const nav = await getTranslations({ locale, namespace: "nav" });
   const isTr = locale === "tr";
 
+  const aboutLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: t("metaTitle"),
+    description: t("metaDesc"),
+    url:
+      locale === "tr"
+        ? `${SITE_URL}/hakkimizda`
+        : `${SITE_URL}/${locale}/hakkimizda`,
+    mainEntity: {
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/#business`,
+      name: "Bodrumapartvilla",
+    },
+  };
+
   return (
     <>
+      <JsonLd data={aboutLd} />
       <PageHero
         title={t("h1")}
         subtitle={t("subtitle")}

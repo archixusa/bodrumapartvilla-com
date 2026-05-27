@@ -84,17 +84,24 @@ export default async function HomePage({
   const jsonLd = [
     {
       "@context": "https://schema.org",
-      "@type": "LodgingBusiness",
-      name: "bodrumapartvilla.com",
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/#business`,
+      name: "Bodrumapartvilla",
       url: SITE_URL,
       logo: `${SITE_URL}/logo_kare.svg`,
-      image: `${SITE_URL}/logo_kare.svg`,
-      description: t("metaDesc"),
+      image: `${SITE_URL}/og-default.png`,
+      description: "butik villa kiralama",
+      priceRange: "$$$",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Bodrum",
         addressRegion: "Muğla",
         addressCountry: "TR",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 37.0344,
+        longitude: 27.4305,
       },
       areaServed: districts.map((d) => d.name),
       aggregateRating: {

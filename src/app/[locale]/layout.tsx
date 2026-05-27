@@ -37,20 +37,27 @@ const SITE_URL =
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Bodrum Villa & Apart Kiralama 2026 | Özel Havuzlu",
-    template: "%s | bodrumapartvilla.com",
+    default: "Bodrumapartvilla | Bodrum'da Butik Villa Kiralama",
+    template: "%s | Bodrumapartvilla",
   },
   description:
-    "Bodrum'da özel havuzlu villa ve doğrulanmış apart seçenekleri. Yalıkavak, Gümbet, Turgutreis'te kapıdan teslim, ücretsiz iptal, anında onay.",
+    "Bodrum yarımadasında özenle seçilmiş bir villa koleksiyonu. Sınırlı sayıda mülk, kişisel konsiyerj ve sakin bir konaklama anlayışı.",
   openGraph: {
     type: "website",
-    siteName: "bodrumapartvilla.com",
+    siteName: "Bodrumapartvilla",
     locale: "tr_TR",
-    images: ["/logo_kare.svg"],
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Bodrumapartvilla — A considered collection of villas",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/logo_kare.svg"],
+    images: ["/og-default.png"],
   },
   alternates: {
     canonical: SITE_URL,
@@ -62,9 +69,16 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/icon.svg",
-    apple: "/logo_kare.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
+  manifest: "/site.webmanifest",
+  themeColor: "#0F172A",
   robots: {
     index: true,
     follow: true,
