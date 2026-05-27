@@ -32,14 +32,13 @@ export function Header() {
   }, []);
 
   const navLinks = [
+    { href: "/", label: locale === "tr" ? "Anasayfa" : "Home" },
     { href: "/villalar", label: t("villas") },
-    { href: "/apartlar", label: t("apartments") },
-    { href: "/tekne-kiralama", label: t("boat") },
-    { href: "/arac-kiralama", label: t("car") },
-    { href: "/vip-transfer", label: t("transfer") },
-    { href: "/turlar", label: t("tours") },
-    { href: "/blog", label: t("blog") },
+    { href: "/hakkimizda", label: t("about") },
+    { href: "/iletisim", label: t("contact") },
   ];
+
+  const ownerCtaLabel = locale === "tr" ? "Villanızı Yönetmek" : "Entrust Your Villa";
 
   return (
     <header
@@ -69,10 +68,10 @@ export function Header() {
             />
             <span className="hidden flex-col leading-tight sm:flex">
               <span className="text-display text-sm font-extrabold tracking-tight text-ink">
-                Bodrumapartvilla
+                BodrumApart
               </span>
               <span className="font-mono text-[9px] font-bold uppercase tracking-[0.28em] text-accent-600">
-                Butik Konaklama
+                Villa
               </span>
             </span>
           </Link>
@@ -138,9 +137,9 @@ export function Header() {
             </div>
             <Link
               href="/evinizi-kiraya-verin"
-              className="hidden xl:inline-flex items-center gap-1.5 rounded-full border border-accent-500/40 px-4 py-2 text-xs font-semibold uppercase tracking-kicker text-accent-500 transition hover:bg-accent-500 hover:text-white"
+              className="inline-flex items-center gap-1.5 rounded-full border border-accent-500/60 bg-accent-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-kicker text-accent-600 transition hover:bg-accent-500 hover:text-white"
             >
-              Villanızı Yönetmek
+              {ownerCtaLabel}
             </Link>
             <a
               href={`https://wa.me/${c("whatsappNumber")}`}
@@ -182,7 +181,7 @@ export function Header() {
               onClick={() => setOpen(false)}
               className="block rounded-full px-4 py-2.5 text-sm font-bold text-accent-600 hover:bg-accent-500/10"
             >
-              Villanızı Yönetmek →
+              {ownerCtaLabel} →
             </Link>
             <div className="flex items-center gap-2 pt-2">
               {routing.locales.map((l) => (
