@@ -10,6 +10,8 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { AnalyticsScripts, GtmNoScript } from "@/components/Analytics";
 import { CookieConsent } from "@/components/CookieConsent";
+import { SeasonBanner } from "@/components/SeasonBanner";
+import { ExitIntentModal } from "@/components/ExitIntentModal";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
@@ -121,6 +123,7 @@ export default async function LocaleLayout({
           >
             Skip to content
           </a>
+          <SeasonBanner />
           <Header />
           <main id="main" className="relative min-h-[60vh]">
             {children}
@@ -128,6 +131,7 @@ export default async function LocaleLayout({
           <Footer />
           <WhatsAppFab />
           <CookieConsent />
+          <ExitIntentModal />
         </NextIntlClientProvider>
       </body>
     </html>
