@@ -45,7 +45,8 @@ export function AnalyticsScripts() {
             {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${GA_ID}', { anonymize_ip: true });`}
+var consent = typeof window !== 'undefined' && window.localStorage && window.localStorage.getItem('cookie-consent') === 'accepted';
+gtag('config', '${GA_ID}', { anonymize_ip: true, send_page_view: consent });`}
           </Script>
         </>
       )}

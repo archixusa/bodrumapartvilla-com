@@ -1,0 +1,25 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#0B1220"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="55%" r="40%">
+      <stop offset="0%" stop-color="#E8C589" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <!-- thin gold rule (top + bottom) -->
+  <rect x="80" y="80" width="1040" height="1" fill="#E8C589" opacity="0.5"/>
+  <rect x="80" y="549" width="1040" height="1" fill="#E8C589" opacity="0.5"/>
+  <!-- Eyebrow -->
+  <text x="600" y="180" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="18" letter-spacing="6" fill="#E8C589" opacity="0.85">BODRUM &#183; PENINSULA</text>
+  <!-- Wordmark -->
+  <text x="600" y="320" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="92" font-weight="400" fill="#F5F5F0" letter-spacing="2">Bodrumapartvilla</text>
+  <!-- Tagline -->
+  <text x="600" y="380" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="26" fill="#C8CDD4" opacity="0.9">A considered collection of villas</text>
+  <!-- Bottom mark -->
+  <text x="600" y="500" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" letter-spacing="4" fill="#E8C589" opacity="0.7">EST. 2026</text>
+</svg>
