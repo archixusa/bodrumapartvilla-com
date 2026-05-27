@@ -420,7 +420,7 @@ export default async function HomePage({
       </section>
 
       {/* OWNERS — dark CTA */}
-      <section className="relative overflow-hidden py-24 md:py-32">
+      <section className="relative isolate overflow-hidden py-24 md:py-32">
         <div
           aria-hidden
           className="absolute inset-0 -z-10"
