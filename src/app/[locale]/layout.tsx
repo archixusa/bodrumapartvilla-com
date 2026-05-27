@@ -10,6 +10,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { AnalyticsScripts, GtmNoScript } from "@/components/Analytics";
 import { CookieConsent } from "@/components/CookieConsent";
+import { JsonLd } from "@/components/JsonLd";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
@@ -114,6 +115,40 @@ export default async function LocaleLayout({
       </head>
       <body className="bg-bg-base font-sans text-ink antialiased">
         <GtmNoScript />
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Bodrumapartvilla",
+            url: SITE_URL,
+            logo: `${SITE_URL}/logo_kare.svg`,
+            image: `${SITE_URL}/og-default.png`,
+            priceRange: "₺₺₺",
+            description:
+              "Bodrum yarımadasında butik villa konaklama. Sınırlı koleksiyon, kişisel konsiyerj, premium misafir profili.",
+            telephone: "+90 538 512 40 88",
+            email: "info@bodrumapartvilla.com",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Bodrum",
+              addressRegion: "Muğla",
+              addressCountry: "TR",
+            },
+            areaServed: [
+              "Yalıkavak",
+              "Türkbükü",
+              "Göltürkbükü",
+              "Gümüşlük",
+              "Torba",
+              "Gündoğan",
+              "Bitez",
+              "Ortakent",
+              "Turgutreis",
+              "Gümbet",
+            ],
+            sameAs: [SITE_URL],
+          }}
+        />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <a
             href="#main"
