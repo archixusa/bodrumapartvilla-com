@@ -197,7 +197,7 @@ export default async function ConciergePage({
       <JsonLd data={jsonLd} />
 
       {/* HERO */}
-      <section className="relative overflow-hidden pt-40 pb-24 md:pt-48 md:pb-32">
+      <section className="relative isolate overflow-hidden pt-40 pb-24 md:pt-48 md:pb-32">
         <div aria-hidden className="absolute inset-0 -z-10">
           <Image
             src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=2400&q=80"
