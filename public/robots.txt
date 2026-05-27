@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /yorum/
+Disallow: /unsubscribe
+Disallow: /newsletter-onayla
 
 Sitemap: https://bodrumapartvilla.com/sitemap.xml
