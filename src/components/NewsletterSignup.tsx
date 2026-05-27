@@ -32,10 +32,18 @@ export function NewsletterSignup({
     "idle"
   );
   const [errorDetail, setErrorDetail] = useState<string | null>(null);
+  // Honeypot — hidden field; if a bot fills it we silently treat as success.
+  const [honeypot, setHoneypot] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setErrorDetail(null);
+
+    // Honeypot tripwire — bots fill every visible field including this one.
+    if (honeypot.trim() !== "") {
+      setStatus("ok");
+      return;
+    }
 
     const trimmed = email.trim();
     if (!trimmed || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
@@ -136,6 +144,18 @@ export function NewsletterSignup({
         />
         <span>{consentText}</span>
       </label>
+
+      {/* Honeypot field — hidden from real users; bots that fill it get a soft-fail. */}
+      <input
+        type="text"
+        name="website"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
 
       {status === "err" && errorDetail && (
         <p className="mt-4 text-xs text-red-700">{errorDetail}</p>

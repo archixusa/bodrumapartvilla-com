@@ -103,6 +103,8 @@ export function ExitIntentModal() {
     "idle"
   );
   const [err, setErr] = useState<string | null>(null);
+  // Honeypot — hidden field; if a bot fills it we silently treat as success.
+  const [honeypot, setHoneypot] = useState("");
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -184,6 +186,11 @@ export function ExitIntentModal() {
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setErr(null);
+    // Honeypot tripwire — bots fill every visible field including this one.
+    if (honeypot.trim() !== "") {
+      setStatus("ok");
+      return;
+    }
     if (!contact.trim()) {
       setStatus("err");
       setErr(copy.contact);
@@ -307,6 +314,18 @@ export function ExitIntentModal() {
                 style={{ fontSize: 16 }}
               />
             </label>
+            {/* Honeypot — hidden from real users; bots fill it. */}
+            <input
+              type="text"
+              name="website"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+              className="hidden"
+              aria-hidden="true"
+            />
+
             <label className="flex items-start gap-3 text-xs leading-relaxed text-muted">
               <input
                 type="checkbox"
