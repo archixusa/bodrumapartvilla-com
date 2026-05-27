@@ -343,7 +343,13 @@
     "metaTitle": "KVKK Aydınlatma Metni",
     "h1": "KVKK & Gizlilik Politikası",
     "subtitle": "6698 sayılı KVKK kapsamında veri sahibi olarak haklarınız ve veri işleme süreçlerimiz.",
-    "lastUpdate": "Son güncelleme: 25 Mayıs 2026"
+    "lastUpdate": "Son güncelleme: 27 Mayıs 2026"
+  },
+  "cookies": {
+    "metaTitle": "Çerez Politikası",
+    "h1": "Çerez Politikası",
+    "subtitle": "Sitemizde kullanılan çerez kategorileri, üçüncü taraf çerezleri ve tercih yönetimi.",
+    "lastUpdate": "Son güncelleme: 27 Mayıs 2026"
   },
   "terms": {
     "metaTitle": "Kullanım Şartları",
@@ -372,12 +378,20 @@
     "explore": "Keşfet",
     "services": "Hizmetler",
     "company": "Kurumsal",
+    "corporate": "Kurumsal",
+    "collection": "Koleksiyon",
+    "help": "Yardım",
     "legal": "Yasal",
     "kvkk": "KVKK & Gizlilik",
+    "cookies": "Çerez Politikası",
     "terms": "Kullanım Şartları",
     "cancel": "İptal & İade",
     "contact": "İletişim",
+    "stayRequest": "Konaklama Talebi",
+    "ownerEntrust": "Villanızı Yönetmek",
+    "faq": "Sıkça Sorulan Sorular",
     "rights": "Tüm hakları saklıdır.",
-    "follow": "Bizi takip edin"
+    "follow": "Bizi takip edin",
+    "concierge": "Konsiyerj"
   }
 }
