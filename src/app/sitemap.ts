@@ -25,7 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/vip-transfer",
     "/turlar",
     "/blog",
-    "/yazar/furkan-sahin",
     "/hakkimizda",
     "/iletisim",
     "/sss",
