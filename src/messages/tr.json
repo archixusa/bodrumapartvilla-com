@@ -129,7 +129,10 @@
     "bitez": "Bitez",
     "ortakent": "Ortakent",
     "gundogan": "Gündoğan",
-    "torba": "Torba"
+    "torba": "Torba",
+    "turkbuku": "Türkbükü",
+    "gumusluk": "Gümüşlük",
+    "golturkbuku": "Göltürkbükü"
   },
   "propertyList": {
     "metaTitle": "Bodrum Kiralık Villa & Apart | Müsait Konutlar 2026",
@@ -374,7 +377,7 @@
     "relatedTitle": "İlgili Yazılar"
   },
   "footer": {
-    "tagline": "Bodrum'un yerel villa & apart kiralama platformu.",
+    "tagline": "Bodrum'da butik villa konaklama platformu.",
     "explore": "Keşfet",
     "services": "Hizmetler",
     "company": "Kurumsal",

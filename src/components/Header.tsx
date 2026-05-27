@@ -34,6 +34,10 @@ export function Header() {
   const navLinks = [
     { href: "/", label: locale === "tr" ? "Anasayfa" : "Home" },
     { href: "/villalar", label: t("villas") },
+    {
+      href: "/konsiyerj",
+      label: locale === "tr" ? "Konsiyerj" : "Concierge",
+    },
     { href: "/blog", label: "Blog" },
     { href: "/hakkimizda", label: t("about") },
     { href: "/iletisim", label: t("contact") },

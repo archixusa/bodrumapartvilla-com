@@ -129,7 +129,10 @@
     "bitez": "Bitez",
     "ortakent": "Ortakent",
     "gundogan": "Gündoğan",
-    "torba": "Torba"
+    "torba": "Torba",
+    "turkbuku": "Türkbükü",
+    "gumusluk": "Gümüşlük",
+    "golturkbuku": "Göltürkbükü"
   },
   "propertyList": {
     "metaTitle": "Bodrum Villas & Apartments for Rent | Available Homes 2026",
@@ -374,7 +377,7 @@
     "relatedTitle": "Related Posts"
   },
   "footer": {
-    "tagline": "Bodrum's local villa & apartment rental platform.",
+    "tagline": "Платформа бутик-вилл в Бодруме.",
     "explore": "Explore",
     "services": "Services",
     "company": "Company",

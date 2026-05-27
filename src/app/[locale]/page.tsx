@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ArrowUpRight, MessageCircle, Mail } from "lucide-react";
 import { Link } from "@/i18n/routing";
@@ -87,24 +88,30 @@ export default async function HomePage({
     <>
       <JsonLd data={jsonLd} />
 
-      {/* HERO — minimal, generous whitespace, no demo imagery */}
+      {/* HERO — premium villa photography background */}
       <section className="relative overflow-hidden pt-40 pb-32 md:pt-48 md:pb-40">
-        <div
-          aria-hidden
-          className="absolute inset-0 -z-10"
-          style={{
-            background:
-              "radial-gradient(50% 50% at 25% 25%, rgba(217,178,110,0.10) 0%, transparent 60%), radial-gradient(45% 45% at 80% 80%, rgba(109,144,220,0.08) 0%, transparent 60%)",
-          }}
-        />
+        <div aria-hidden className="absolute inset-0 -z-10">
+          <Image
+            src="https://images.unsplash.com/photo-1613553474179-e1eda3ea5734?auto=format&fit=crop&w=2400&q=80"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div
+            className="absolute inset-0"
+            style={{ backgroundColor: "rgba(0,0,0,0.4)" }}
+          />
+        </div>
         <div className="container-page">
           <div className="mx-auto max-w-3xl text-center">
-            <MonoLabel className="text-accent-600" withLine={false}>
+            <MonoLabel className="text-white/90" withLine={false}>
               {isTr
                 ? "Bodrum · Butik Konaklama"
                 : "Bodrum · Boutique Stays"}
             </MonoLabel>
-            <h1 className="mt-10 font-display text-5xl font-semibold leading-[0.98] tracking-tight text-ink md:text-7xl">
+            <h1 className="mt-10 font-display text-5xl font-semibold leading-[0.98] tracking-tight text-white md:text-7xl">
               {isTr ? (
                 <>
                   Bodrum&apos;da,
@@ -122,7 +129,7 @@ export default async function HomePage({
               )}
             </h1>
             <div className="editorial-divider mx-auto mt-12 max-w-xs" />
-            <p className="mt-12 text-balance text-base leading-relaxed text-ink/85 md:text-lg">
+            <p className="mt-12 text-balance text-base leading-relaxed text-white/90 md:text-lg">
               {isTr
                 ? "Bodrumapartvilla, sayısı sınırlı bir villa koleksiyonu kurmaktadır. Mülkler, mimarisi ve karakteriyle değerlendirilir; misafire ulaşan deneyim, bu sessiz seçiciliğin karşılığıdır."
                 : "Bodrumapartvilla is building a small, deliberate collection of villas. Each property is judged on its architecture and its character; what reaches the guest is the result of that quiet discipline."}
@@ -163,24 +170,30 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* VISUAL STORYTELLING — large quiet image bands (CSS-only, no demo photography) */}
+      {/* VISUAL STORYTELLING — premium villa photography */}
       <section className="section relative">
         <div className="container-page">
           <RevealOnScroll>
-            <div
-              aria-hidden
-              className="relative h-[420px] overflow-hidden rounded-[40px] border border-[var(--color-border)] md:h-[560px]"
-              style={{
-                background:
-                  "radial-gradient(80% 80% at 30% 30%, rgba(217,178,110,0.22) 0%, transparent 65%), radial-gradient(70% 70% at 80% 80%, rgba(109,144,220,0.20) 0%, transparent 65%), linear-gradient(160deg, #f8f5ef 0%, #eaf0fb 100%)",
-              }}
-            >
+            <div className="relative h-[420px] overflow-hidden rounded-[40px] border border-[var(--color-border)] md:h-[560px]">
+              <Image
+                src="https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&w=2400&q=80"
+                alt={
+                  isTr
+                    ? "Bodrum'da butik villa havuzu ve teras"
+                    : "Boutique villa pool and terrace in Bodrum"
+                }
+                fill
+                loading="lazy"
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                className="object-cover"
+              />
               <div
                 aria-hidden
-                className="absolute inset-0 grid-overlay opacity-25 mask-fade-b"
+                className="absolute inset-0"
+                style={{ backgroundColor: "rgba(15, 23, 42, 0.35)" }}
               />
               <div className="relative flex h-full items-center justify-center px-8 text-center">
-                <p className="font-display text-2xl italic leading-relaxed text-ink/70 md:text-4xl">
+                <p className="font-display text-2xl italic leading-relaxed text-white md:text-4xl">
                   {isTr
                     ? "“Önce mekân, sonra liste. Önce karakter, sonra rakam.”"
                     : "“The place first, the listing second. The character first, the numbers second.”"}
@@ -215,36 +228,54 @@ export default async function HomePage({
       {/* OWNERS SECTION — link to /evinizi-kiraya-verin */}
       <section className="section section-blue">
         <div className="container-page">
-          <RevealOnScroll className="mx-auto max-w-3xl text-center">
-            <MonoLabel className="text-accent-600">
-              {isTr ? "Mülk Sahipleri İçin" : "For Property Owners"}
-            </MonoLabel>
-            <h2 className="mt-4 font-display text-3xl font-semibold leading-tight text-ink md:text-5xl">
-              {isTr ? "Mülk Sahibi misiniz?" : "Are you a property owner?"}
-            </h2>
-            <p className="mt-8 text-base leading-relaxed text-ink/80 md:text-lg">
-              {isTr
-                ? "Bodrum'da bir villanız varsa ve onu sayı odaklı bir kiralama akışına bırakmak istemiyorsanız — değerlendirelim. Mülkler, başvuru sonrası bireysel olarak incelenir; koleksiyona katılım, karşılıklı bir uyumun sonucunda gerçekleşir."
-                : "If you own a villa in Bodrum and would rather not entrust it to a high-volume rental flow, we should talk. Properties are reviewed individually after an enquiry; admission to the collection follows only when there is a real, mutual fit."}
-            </p>
-            <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link href="/evinizi-kiraya-verin" className="btn-primary">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <RevealOnScroll>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[36px] border border-[var(--color-border)]">
+                <Image
+                  src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=80"
+                  alt={
+                    isTr
+                      ? "Bodrum'da özel havuzlu villa cephesi"
+                      : "Private-pool villa facade in Bodrum"
+                  }
+                  fill
+                  loading="lazy"
+                  sizes="(min-width: 1024px) 480px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll>
+              <MonoLabel className="text-accent-600">
+                {isTr ? "Mülk Sahipleri İçin" : "For Property Owners"}
+              </MonoLabel>
+              <h2 className="mt-4 font-display text-3xl font-semibold leading-tight text-ink md:text-5xl">
+                {isTr ? "Mülk Sahibi misiniz?" : "Are you a property owner?"}
+              </h2>
+              <p className="mt-8 text-base leading-relaxed text-ink/80 md:text-lg">
                 {isTr
-                  ? "Villanızı Bizimle Yönetin"
-                  : "Entrust Your Villa to Us"}
-                <ArrowUpRight className="h-4 w-4" />
-              </Link>
-              <a
-                href={`https://wa.me/${c("whatsappNumber")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-              >
-                <MessageCircle className="h-4 w-4" />
-                {isTr ? "Konuşmak için" : "To speak with us"}
-              </a>
-            </div>
-          </RevealOnScroll>
+                  ? "Bodrum'da bir villanız varsa ve onu sayı odaklı bir kiralama akışına bırakmak istemiyorsanız — değerlendirelim. Mülkler, başvuru sonrası bireysel olarak incelenir; koleksiyona katılım, karşılıklı bir uyumun sonucunda gerçekleşir."
+                  : "If you own a villa in Bodrum and would rather not entrust it to a high-volume rental flow, we should talk. Properties are reviewed individually after an enquiry; admission to the collection follows only when there is a real, mutual fit."}
+              </p>
+              <div className="mt-10 flex flex-col items-start gap-3 sm:flex-row">
+                <Link href="/evinizi-kiraya-verin" className="btn-primary">
+                  {isTr
+                    ? "Villanızı Bizimle Yönetin"
+                    : "Entrust Your Villa to Us"}
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+                <a
+                  href={`https://wa.me/${c("whatsappNumber")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  {isTr ? "Konuşmak için" : "To speak with us"}
+                </a>
+              </div>
+            </RevealOnScroll>
+          </div>
         </div>
       </section>
 
