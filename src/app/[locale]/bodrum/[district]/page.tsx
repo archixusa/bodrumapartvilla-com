@@ -70,6 +70,10 @@ export default async function DistrictPage({
     .map((slug) => districts.find((x) => x.slug === slug))
     .filter(Boolean);
 
+  const seoSections = d.seo ? (isTr ? d.seo.sections.tr : d.seo.sections.en) : null;
+  const seoFaq = d.seo ? (isTr ? d.seo.faq.tr : d.seo.faq.en) : null;
+  const seoH1 = d.seo ? (isTr ? d.seo.h1.tr : d.seo.h1.en) : null;
+
   const districtFaq = [
     {
       q: isTr
@@ -113,6 +117,8 @@ export default async function DistrictPage({
     },
   ];
 
+  const combinedFaq = [...districtFaq, ...(seoFaq ?? [])];
+
   const jsonLd = [
     {
       "@context": "https://schema.org",
@@ -129,6 +135,22 @@ export default async function DistrictPage({
     },
     {
       "@context": "https://schema.org",
+      "@type": "Place",
+      name: `${districtName}, Bodrum`,
+      description: longDesc,
+      url: `${SITE_URL}/bodrum/${d.urlSlug}`,
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: d.lat,
+        longitude: d.lng,
+      },
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: "Bodrum, Muğla, Türkiye",
+      },
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: isTr ? "Ana Sayfa" : "Home", item: SITE_URL },
@@ -139,7 +161,7 @@ export default async function DistrictPage({
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      mainEntity: districtFaq.map((it) => ({
+      mainEntity: combinedFaq.map((it) => ({
         "@type": "Question",
         name: it.q,
         acceptedAnswer: { "@type": "Answer", text: it.a },
@@ -167,7 +189,9 @@ export default async function DistrictPage({
             <span className="px-2">/</span>
             <Link href="/kiralik" className="hover:underline">{fl("title")}</Link>
           </nav>
-          <h1 className="text-white">{t("h1", { district: districtName })}</h1>
+          <h1 className="text-white">
+            {seoH1 ?? t("h1", { district: districtName })}
+          </h1>
           <p className="mt-3 max-w-2xl text-base text-white/85 md:text-lg">
             {isTr ? d.shortDescTr : d.shortDescEn}
           </p>
@@ -199,6 +223,28 @@ export default async function DistrictPage({
           </aside>
         </div>
       </section>
+
+      {seoSections && (
+        <section className="section">
+          <div className="container-page mx-auto max-w-4xl space-y-10">
+            {seoSections.map((s, i) => (
+              <article key={i}>
+                <h2 className="font-display text-2xl font-semibold leading-tight text-ink md:text-3xl">
+                  {s.heading}
+                </h2>
+                <p className="mt-4 text-[15px] leading-relaxed text-ink/85">
+                  {s.body}
+                </p>
+              </article>
+            ))}
+            {d.seo?.priceRange && (
+              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-accent-600">
+                {isTr ? "Fiyat aralığı" : "Price range"} · {d.seo.priceRange}
+              </p>
+            )}
+          </div>
+        </section>
+      )}
 
       <section className="section section-soft">
         <div className="container-page">
@@ -243,7 +289,7 @@ export default async function DistrictPage({
         <div className="container-page max-w-4xl">
           <h2>{isTr ? `${districtName} Hakkında Sıkça Sorulanlar` : `${districtName} FAQ`}</h2>
           <div className="mt-6">
-            <FAQ items={districtFaq} />
+            <FAQ items={combinedFaq} />
           </div>
         </div>
       </section>
