@@ -64,8 +64,8 @@ export default async function Page({
         <section className="mt-12 space-y-6 text-[17px] leading-relaxed text-ink/85">
           <p>
             {isTr
-              ? "Bodrumapartvilla, Bodrum bölgesinde butik villa kiralama deneyimi sunan, sınırlı koleksiyon ve özenli ortaklık ilkesiyle çalışan bir konaklama platformudur."
-              : "Bodrumapartvilla is a stay platform operating across the Bodrum region, offering a boutique villa-rental experience built on a limited collection and a careful sense of partnership."}
+              ? "Bodrumapartvilla, 2013'ten bu yana Bodrum bölgesinde butik villa kiralama deneyimi sunan, sınırlı koleksiyon ve özenli ortaklık ilkesiyle çalışan bir konaklama platformudur."
+              : "Founded in 2013, Bodrumapartvilla is a stay platform operating across the Bodrum region, offering a boutique villa-rental experience built on a limited collection and a careful sense of partnership."}
           </p>
           <p>
             {isTr
