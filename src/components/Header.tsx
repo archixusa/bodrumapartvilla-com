@@ -48,7 +48,7 @@ export function Header() {
   return (
     <header
       className={clsx(
-        "fixed inset-x-0 top-0 z-40 transition-all duration-500",
+        "sticky top-0 z-40 transition-all duration-500",
         scrolled ? "py-2" : "py-4"
       )}
     >
