@@ -1,15 +1,12 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Mail, Phone, Instagram, Facebook, MapPin } from "lucide-react";
+import { Mail, MessageCircle, Instagram, Facebook, MapPin } from "lucide-react";
 import { Link } from "@/i18n/routing";
-import { districts } from "@/data/districts";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 
 export function Footer() {
   const t = useTranslations("footer");
   const c = useTranslations("common");
-  const nav = useTranslations("nav");
-  const dt = useTranslations("districts");
   const year = new Date().getFullYear();
 
   return (
@@ -34,98 +31,109 @@ export function Footer() {
       />
 
       <div className="container-page relative py-16 lg:py-20">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-3 rounded-2xl glass-strong px-4 py-3">
-              <Image
-                src="/logo_kare.svg"
-                alt=""
-                width={36}
-                height={36}
-                className="h-9 w-9"
-              />
-              <div className="flex flex-col leading-tight">
-                <span className="text-display text-base font-extrabold tracking-tight text-ink">
-                  BodrumApart
-                </span>
-                <span className="font-mono text-[10px] font-bold uppercase tracking-[0.28em] text-accent-600">
-                  Villa
-                </span>
-              </div>
-            </div>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted">
-              {t("tagline")}
-            </p>
-            <div className="mt-6 space-y-2.5 text-sm">
-              <a
-                href={`tel:${c("phone").replace(/\s/g, "")}`}
-                className="group inline-flex items-center gap-2 text-ink/85 hover:text-ink"
-              >
-                <Phone className="h-4 w-4 text-accent-500" />
-                <span className="font-mono text-[13px]">
-                  {c("phoneDisplay")}
-                </span>
-              </a>
-              <a
-                href={`mailto:${c("email")}`}
-                className="flex items-center gap-2 text-ink/85 hover:text-ink"
-              >
-                <Mail className="h-4 w-4 text-accent-500" />
-                <span className="font-mono text-[13px]">{c("email")}</span>
-              </a>
-              <p className="flex items-center gap-2 text-muted">
-                <MapPin className="h-4 w-4 text-accent-500" />
-                Bodrum, Muğla / Türkiye
-              </p>
-            </div>
-            <div className="mt-6 flex gap-2">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="rounded-full glass px-3 py-3 transition hover:border-accent-500"
-              >
-                <Instagram className="h-4 w-4 text-ink" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="rounded-full glass px-3 py-3 transition hover:border-accent-500"
-              >
-                <Facebook className="h-4 w-4 text-ink" />
-              </a>
+        {/* Brand block */}
+        <div className="mb-12 max-w-md">
+          <div className="inline-flex items-center gap-3 rounded-2xl glass-strong px-4 py-3">
+            <Image
+              src="/logo_kare.svg"
+              alt=""
+              width={36}
+              height={36}
+              className="h-9 w-9"
+            />
+            <div className="flex flex-col leading-tight">
+              <span className="text-display text-base font-extrabold tracking-tight text-ink">
+                BodrumApart
+              </span>
+              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.28em] text-accent-600">
+                Villa
+              </span>
             </div>
           </div>
+          <p className="mt-5 text-sm leading-relaxed text-muted">
+            {t("tagline")}
+          </p>
+        </div>
 
-          <FooterColumn title={t("explore")} className="lg:col-span-2">
-            <FooterLink href="/villalar">{nav("villas")}</FooterLink>
-            <FooterLink href="/apartlar">{nav("apartments")}</FooterLink>
-            {districts.slice(0, 4).map((d) => (
-              <FooterLink key={d.slug} href={`/bodrum/${d.urlSlug}`}>
-                {dt(d.slug)}
-              </FooterLink>
-            ))}
+        {/* Four columns */}
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <FooterColumn title={t("corporate")}>
+            <FooterLink href="/hakkimizda">Hakkımızda</FooterLink>
+            <FooterLink href="/iletisim">İletişim</FooterLink>
+            <FooterLink href="/evinizi-kiraya-verin">
+              {t("ownerEntrust")}
+            </FooterLink>
           </FooterColumn>
 
-          <FooterColumn title={t("services")} className="lg:col-span-2">
-            <FooterLink href="/tekne-kiralama">{nav("boat")}</FooterLink>
-            <FooterLink href="/arac-kiralama">{nav("car")}</FooterLink>
-            <FooterLink href="/vip-transfer">{nav("transfer")}</FooterLink>
-            <FooterLink href="/turlar">{nav("tours")}</FooterLink>
+          <FooterColumn title={t("collection")}>
+            <FooterLink href="/villalar">Villalar</FooterLink>
+            <FooterLink href="/iletisim">{t("stayRequest")}</FooterLink>
           </FooterColumn>
 
-          <FooterColumn title={t("company")} className="lg:col-span-3">
-            <FooterLink href="/hakkimizda">{nav("about")}</FooterLink>
-            <FooterLink href="/iletisim">{nav("contact")}</FooterLink>
-            <FooterLink href="/evinizi-kiraya-verin">Mülkünüzü Bize Emanet Edin</FooterLink>
-            <FooterLink href="/blog">{nav("blog")}</FooterLink>
-            <FooterLink href="/sss">FAQ</FooterLink>
+          <FooterColumn title={t("help")}>
+            <FooterLink href="/sss">{t("faq")}</FooterLink>
             <FooterLink href="/kvkk">{t("kvkk")}</FooterLink>
+            <FooterLink href="/cerez-politikasi">{t("cookies")}</FooterLink>
             <FooterLink href="/kullanim-sartlari">{t("terms")}</FooterLink>
             <FooterLink href="/iptal-iade-politikasi">{t("cancel")}</FooterLink>
+          </FooterColumn>
+
+          <FooterColumn title={t("contact")}>
+            <li>
+              <a
+                href={`https://wa.me/${c("whatsappNumber")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-start gap-2 text-ink/80 transition hover:text-ink"
+              >
+                <MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-accent-500" />
+                <span>
+                  <span className="block text-[13px] font-semibold">
+                    {t("concierge")} · WhatsApp
+                  </span>
+                  <span className="block font-mono text-[12px] text-muted">
+                    {c("phoneDisplay")}
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href={`mailto:${c("email")}`}
+                className="group inline-flex items-start gap-2 text-ink/80 transition hover:text-ink"
+              >
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-accent-500" />
+                <span className="font-mono text-[12px]">{c("email")}</span>
+              </a>
+            </li>
+            <li>
+              <p className="inline-flex items-start gap-2 text-muted">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent-500" />
+                <span className="text-[13px]">Bodrum, Muğla / Türkiye</span>
+              </p>
+            </li>
+            <li className="pt-2">
+              <div className="flex gap-2">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="rounded-full glass px-2.5 py-2.5 transition hover:border-accent-500"
+                >
+                  <Instagram className="h-4 w-4 text-ink" />
+                </a>
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="rounded-full glass px-2.5 py-2.5 transition hover:border-accent-500"
+                >
+                  <Facebook className="h-4 w-4 text-ink" />
+                </a>
+              </div>
+            </li>
           </FooterColumn>
         </div>
 
@@ -134,7 +142,7 @@ export function Footer() {
             © {year} bodrumapartvilla.com
           </MonoLabel>
           <MonoLabel className="text-muted" withLine={false}>
-            Made with ♥ in Bodrum
+            Made with care in Bodrum
           </MonoLabel>
         </div>
       </div>

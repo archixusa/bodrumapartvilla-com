@@ -343,7 +343,13 @@
     "metaTitle": "Privacy Notice (KVKK)",
     "h1": "Privacy Policy & KVKK",
     "subtitle": "Your rights as a data subject under Turkish KVKK law and how we process personal data.",
-    "lastUpdate": "Last updated: 25 May 2026"
+    "lastUpdate": "Last updated: 27 May 2026"
+  },
+  "cookies": {
+    "metaTitle": "Cookie Policy",
+    "h1": "Cookie Policy",
+    "subtitle": "Cookie categories used on the site, third-party cookies, and how to manage preferences.",
+    "lastUpdate": "Last updated: 27 May 2026"
   },
   "terms": {
     "metaTitle": "Terms of Use",
@@ -372,12 +378,20 @@
     "explore": "Explore",
     "services": "Services",
     "company": "Company",
+    "corporate": "Company",
+    "collection": "Collection",
+    "help": "Help",
     "legal": "Legal",
     "kvkk": "Privacy & KVKK",
+    "cookies": "Cookie Policy",
     "terms": "Terms of Use",
     "cancel": "Cancellation & Refund",
     "contact": "Contact",
+    "stayRequest": "Stay Enquiry",
+    "ownerEntrust": "Entrust Your Villa",
+    "faq": "FAQ",
     "rights": "All rights reserved.",
-    "follow": "Follow us"
+    "follow": "Follow us",
+    "concierge": "Concierge"
   }
 }
