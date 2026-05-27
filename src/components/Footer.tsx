@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Mail, MessageCircle, Instagram, Facebook, MapPin } from "lucide-react";
+import { Mail, MessageCircle, MapPin } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 
@@ -67,6 +67,7 @@ export function Footer() {
 
           <FooterColumn title={t("collection")}>
             <FooterLink href="/villalar">Villalar</FooterLink>
+            <FooterLink href="/konsiyerj">Konsiyerj</FooterLink>
             <FooterLink href="/iletisim">{t("stayRequest")}</FooterLink>
           </FooterColumn>
 
@@ -111,28 +112,6 @@ export function Footer() {
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent-500" />
                 <span className="text-[13px]">Bodrum, Muğla / Türkiye</span>
               </p>
-            </li>
-            <li className="pt-2">
-              <div className="flex gap-2">
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="rounded-full glass px-2.5 py-2.5 transition hover:border-accent-500"
-                >
-                  <Instagram className="h-4 w-4 text-ink" />
-                </a>
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  className="rounded-full glass px-2.5 py-2.5 transition hover:border-accent-500"
-                >
-                  <Facebook className="h-4 w-4 text-ink" />
-                </a>
-              </div>
             </li>
           </FooterColumn>
         </div>
