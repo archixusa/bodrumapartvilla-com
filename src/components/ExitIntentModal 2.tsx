@@ -106,13 +106,6 @@ export function ExitIntentModal() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    // Per-session guard so the modal can't re-open on the same browsing session.
-    try {
-      if (window.sessionStorage.getItem(STORAGE_KEY) === "shown") return;
-    } catch {
-      // ignore
-    }
-    // Longer-term dismissal (TTL_MS) persists across sessions.
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY);
       if (raw) {
@@ -124,58 +117,22 @@ export function ExitIntentModal() {
     }
 
     let armed = true;
-    const trigger = () => {
-      if (!armed) return;
-      armed = false;
-      setOpen(true);
-      try {
-        window.sessionStorage.setItem(STORAGE_KEY, "shown");
-      } catch {
-        // ignore
-      }
-    };
-
-    // Desktop exit-intent: cursor leaves toward the top edge.
     const onMouseOut = (e: MouseEvent) => {
+      if (!armed) return;
+      // Pointer leaving toward the top of the viewport — classic exit intent.
       if (e.clientY <= 0 && (e.relatedTarget === null || e.relatedTarget === undefined)) {
-        trigger();
+        armed = false;
+        setOpen(true);
       }
     };
-
-    // Mobile fallback: 60 seconds on small viewports.
-    let mobileTimer: number | undefined;
-    if (window.innerWidth < 768) {
-      mobileTimer = window.setTimeout(() => trigger(), 60_000);
-    }
-
     document.addEventListener("mouseout", onMouseOut);
-    return () => {
-      document.removeEventListener("mouseout", onMouseOut);
-      if (mobileTimer) window.clearTimeout(mobileTimer);
-    };
+    return () => document.removeEventListener("mouseout", onMouseOut);
   }, []);
-
-  // ESC key closes the modal; lock background scroll while open.
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") close();
-    };
-    document.addEventListener("keydown", onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open]);
 
   function close() {
     setOpen(false);
     try {
       window.localStorage.setItem(STORAGE_KEY, String(Date.now()));
-      window.sessionStorage.setItem(STORAGE_KEY, "shown");
     } catch {
       // ignore
     }
@@ -233,17 +190,14 @@ export function ExitIntentModal() {
       role="dialog"
       aria-modal="true"
       aria-label={copy.title}
-      className="fixed inset-0 z-[100] flex items-end justify-center bg-ink/50 p-4 backdrop-blur-sm sm:items-center"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) close();
-      }}
+      className="fixed inset-0 z-50 flex items-end justify-center bg-ink/50 p-4 backdrop-blur-sm sm:items-center"
     >
-      <div className="relative w-full max-w-md overflow-hidden rounded-3xl border border-[var(--color-border)] bg-white shadow-glass">
+      <div className="w-full max-w-md overflow-hidden rounded-3xl border border-[var(--color-border)] bg-white shadow-glass">
         <button
           type="button"
           aria-label={copy.close}
           onClick={close}
-          className="absolute right-4 top-4 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink/70 shadow-sm transition hover:bg-white hover:text-ink"
+          className="absolute right-6 top-6 rounded-full p-1 text-ink/60 transition hover:text-ink"
         >
           <X className="h-4 w-4" />
         </button>
