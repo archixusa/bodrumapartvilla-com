@@ -211,7 +211,7 @@ export default async function HomePage({
       <JsonLd data={jsonLd} />
 
       {/* HERO — full-width premium imagery */}
-      <section className="relative overflow-hidden pt-40 pb-32 md:pt-48 md:pb-40">
+      <section className="relative isolate overflow-hidden pt-40 pb-32 md:pt-48 md:pb-40">
         <div aria-hidden className="absolute inset-0 -z-10">
           <Image
             src="/home/hero.webp"
@@ -223,7 +223,10 @@ export default async function HomePage({
           />
           <div
             className="absolute inset-0"
-            style={{ backgroundColor: "rgba(15,23,42,0.55)" }}
+            style={{
+              backgroundImage:
+                "linear-gradient(180deg, rgba(15,23,42,0.55) 0%, rgba(15,23,42,0.75) 100%)",
+            }}
           />
         </div>
         <div className="container-page">
