@@ -10,8 +10,7 @@ import { getMdxPosts } from "@/lib/mdx-blog";
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://bodrumapartvilla.com";
 
-const FALLBACK_HERO =
-  "https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format&fit=crop&w=2000&q=80";
+const FALLBACK_HERO = "/blog/bodrum-villa-rehberi/hero.webp";
 
 interface UnifiedPost {
   source: "legacy" | "mdx";
