@@ -3,6 +3,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import type { District } from "@/data/districts";
+import { loc } from "@/lib/i18n-data";
 
 export function DistrictCard({
   district,
@@ -13,7 +14,6 @@ export function DistrictCard({
 }) {
   const dt = useTranslations("districts");
   const locale = useLocale();
-  const isTr = locale === "tr";
 
   return (
     <Link
@@ -51,10 +51,20 @@ export function DistrictCard({
           {dt(district.slug)}
         </h3>
         <p className="mt-2 line-clamp-2 text-xs text-white/80">
-          {isTr ? district.shortDescTr : district.shortDescEn}
+          {loc(locale, {
+            tr: district.shortDescTr,
+            en: district.shortDescEn,
+            de: district.shortDescDe,
+            ru: district.shortDescRu,
+          })}
         </p>
         <span className="mt-4 inline-flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-accent-400 transition group-hover:gap-3">
-          {isTr ? "Bölgeyi Gör" : "View District"}
+          {loc(locale, {
+            tr: "Bölgeyi Gör",
+            en: "View District",
+            de: "Region ansehen",
+            ru: "Смотреть район",
+          })}
           <ArrowUpRight className="h-3 w-3" />
         </span>
       </div>
