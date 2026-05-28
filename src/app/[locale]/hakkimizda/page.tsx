@@ -116,20 +116,25 @@ export default async function Page({
           </p>
         </section>
 
-        {/* Furkan Şahin */}
+        {/* Kurucu ekip */}
         <section className="mt-16">
           <p className="font-mono text-[11px] font-bold uppercase tracking-[0.32em] text-accent-600">
-            {pick("Kurucu", "Founder", "Gründer", "Основатель")}
+            {pick("Ekibimiz", "Our Team", "Unser Team", "Наша команда")}
           </p>
           <h2 className="mt-4 font-display text-2xl font-semibold leading-tight text-ink md:text-3xl">
-            Furkan Şahin
+            {pick(
+              "Bodrumapartvilla Editör Ekibi",
+              "The Bodrumapartvilla Editorial Team",
+              "Das Bodrumapartvilla-Redaktionsteam",
+              "Редакционная команда Bodrumapartvilla",
+            )}
           </h2>
           <p className="mt-6 text-[17px] leading-relaxed text-ink/85">
             {pick(
-              "Kurucu. Bodrum'da konaklama yönetimi alanında çalışmakta, butik ölçeği ve kalite odağını koruyarak büyümeyi savunmaktadır.",
-              "Founder. Works in hospitality management across Bodrum, advocating for growth that preserves boutique scale and a discipline of quality.",
-              "Gründer. Tätig im Gastgewerbe-Management in Bodrum und Verfechter eines Wachstums, das den Boutique-Maßstab und eine Qualitätsdisziplin bewahrt.",
-              "Основатель. Работает в сфере управления гостеприимством в Бодруме и выступает за рост, сохраняющий бутик-масштаб и дисциплину качества.",
+              "Bodrum'da konaklama yönetimi alanında çalışan ekibimiz; butik ölçeği ve kalite odağını koruyarak büyümeyi savunur.",
+              "Our team works in hospitality management across Bodrum, advocating for growth that preserves boutique scale and a discipline of quality.",
+              "Unser Team ist im Gastgewerbe-Management in Bodrum tätig und steht für ein Wachstum, das den Boutique-Maßstab und eine Qualitätsdisziplin bewahrt.",
+              "Наша команда работает в сфере управления гостеприимством в Бодруме и выступает за рост, сохраняющий бутик-масштаб и дисциплину качества.",
             )}
           </p>
         </section>
