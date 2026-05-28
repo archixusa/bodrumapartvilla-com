@@ -37,7 +37,9 @@ export default async function Page({
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "boat" });
   const c = await getTranslations({ locale, namespace: "common" });
-  const isTr = locale === "tr";
+  const L = locale as "tr" | "en" | "de" | "ru";
+  const pick = (tr: string, en: string, de: string, ru: string) =>
+    ({ tr, en, de, ru } as Record<typeof L, string>)[L] ?? en;
 
   const types = [
     { title: t("boatType1Title"), desc: t("boatType1Desc"), price: t("boatType1Price"), icon: Sun },
@@ -50,34 +52,74 @@ export default async function Page({
 
   const faqItems = [
     {
-      q: isTr ? "Tekneyi nasıl rezerve ederim?" : "How do I book a boat?",
-      a: isTr
-        ? "Sağdaki formu doldurun veya WhatsApp'tan yazın. 1 saat içinde size müsaitlik ve net fiyat teklifi gönderiyoruz."
-        : "Fill in the form on the right or message us on WhatsApp. We send availability and a fixed quote within 1 hour.",
+      q: pick(
+        "Tekneyi nasıl rezerve ederim?",
+        "How do I book a boat?",
+        "Wie buche ich ein Boot?",
+        "Как забронировать лодку?",
+      ),
+      a: pick(
+        "Sağdaki formu doldurun veya WhatsApp'tan yazın. 1 saat içinde size müsaitlik ve net fiyat teklifi gönderiyoruz.",
+        "Fill in the form on the right or message us on WhatsApp. We send availability and a fixed quote within 1 hour.",
+        "Füllen Sie das Formular rechts aus oder schreiben Sie uns über WhatsApp. Innerhalb von einer Stunde erhalten Sie Verfügbarkeit und ein festes Angebot.",
+        "Заполните форму справа или напишите нам в WhatsApp. В течение часа мы пришлём наличие мест и фиксированную цену.",
+      ),
     },
     {
-      q: isTr ? "Villada kalan grubumuza özel charter ayarlar mısınız?" : "Can you arrange a private charter for our villa group?",
-      a: isTr
-        ? "Evet. Villanızdan tekne iskelesine transfer dahil, şef ve ikram dahil bir paket sunabiliyoruz. Grup büyüklüğünü ve tarihi bildirin, teklif çıkaralım."
-        : "Yes. We offer a package with transfer from your villa to the pier, chef and catering included. Share group size and date and we'll quote.",
+      q: pick(
+        "Villada kalan grubumuza özel charter ayarlar mısınız?",
+        "Can you arrange a private charter for our villa group?",
+        "Organisieren Sie einen privaten Charter für unsere Villengruppe?",
+        "Можете ли вы организовать частный чартер для нашей группы на вилле?",
+      ),
+      a: pick(
+        "Evet. Villanızdan tekne iskelesine transfer dahil, şef ve ikram dahil bir paket sunabiliyoruz. Grup büyüklüğünü ve tarihi bildirin, teklif çıkaralım.",
+        "Yes. We offer a package with transfer from your villa to the pier, chef and catering included. Share group size and date and we'll quote.",
+        "Ja. Wir bieten ein Paket mit Transfer von Ihrer Villa zum Anleger, Koch und Catering inklusive. Nennen Sie uns Gruppengröße und Datum, dann erstellen wir ein Angebot.",
+        "Да. Мы предлагаем пакет с трансфером от вашей виллы до причала, шеф-поваром и кейтерингом. Сообщите размер группы и дату — мы подготовим предложение.",
+      ),
     },
     {
-      q: isTr ? "Hangi günler kalkış olur?" : "Which days do tours run?",
-      a: isTr
-        ? "Günlük tekne turları haziran-eylül arasında her gün, mayıs-ekim arasında haftada 3-5 gün kalkar. Mavi tur paketleri her gün başlatılabilir."
-        : "Daily tours run every day from June to September, and 3-5 days a week from May to October. Blue cruise packages can start any day.",
+      q: pick(
+        "Hangi günler kalkış olur?",
+        "Which days do tours run?",
+        "An welchen Tagen finden die Touren statt?",
+        "В какие дни проходят туры?",
+      ),
+      a: pick(
+        "Günlük tekne turları haziran-eylül arasında her gün, mayıs-ekim arasında haftada 3-5 gün kalkar. Mavi tur paketleri her gün başlatılabilir.",
+        "Daily tours run every day from June to September, and 3-5 days a week from May to October. Blue cruise packages can start any day.",
+        "Tagestouren finden von Juni bis September täglich statt, von Mai bis Oktober an 3–5 Tagen pro Woche. Blaue-Reise-Pakete können an jedem Tag beginnen.",
+        "Ежедневные туры проходят каждый день с июня по сентябрь и 3–5 дней в неделю с мая по октябрь. Пакеты «Голубого круиза» можно начать в любой день.",
+      ),
     },
     {
-      q: isTr ? "Çocuklarla katılabilir miyiz?" : "Can we bring children?",
-      a: isTr
-        ? "Evet. Tüm teknelerimizde can yeleği vardır. Bebekler ve çocuklar için özel önlem alıyoruz; lütfen yaşları formda belirtin."
-        : "Yes. Life vests are available on all boats. We take special care for infants and children — please note their ages in the form.",
+      q: pick(
+        "Çocuklarla katılabilir miyiz?",
+        "Can we bring children?",
+        "Können wir Kinder mitbringen?",
+        "Можно ли взять детей?",
+      ),
+      a: pick(
+        "Evet. Tüm teknelerimizde can yeleği vardır. Bebekler ve çocuklar için özel önlem alıyoruz; lütfen yaşları formda belirtin.",
+        "Yes. Life vests are available on all boats. We take special care for infants and children — please note their ages in the form.",
+        "Ja. Auf allen Booten sind Rettungswesten vorhanden. Für Säuglinge und Kinder treffen wir besondere Vorkehrungen; bitte geben Sie das Alter im Formular an.",
+        "Да. На всех лодках есть спасательные жилеты. Для малышей и детей мы принимаем особые меры — пожалуйста, укажите их возраст в форме.",
+      ),
     },
     {
-      q: isTr ? "Hava bozarsa ne oluyor?" : "What happens if the weather is bad?",
-      a: isTr
-        ? "Hava koşulları nedeniyle iptal edilen turlarda ücret iade edilir veya başka bir güne kaydırılır. Karar kaptanın güvenlik değerlendirmesine göre verilir."
-        : "If a tour is cancelled due to weather, you'll get a full refund or a free reschedule. The captain's safety assessment is final.",
+      q: pick(
+        "Hava bozarsa ne oluyor?",
+        "What happens if the weather is bad?",
+        "Was passiert bei schlechtem Wetter?",
+        "Что происходит при плохой погоде?",
+      ),
+      a: pick(
+        "Hava koşulları nedeniyle iptal edilen turlarda ücret iade edilir veya başka bir güne kaydırılır. Karar kaptanın güvenlik değerlendirmesine göre verilir.",
+        "If a tour is cancelled due to weather, you'll get a full refund or a free reschedule. The captain's safety assessment is final.",
+        "Wird eine Tour wegen des Wetters abgesagt, erhalten Sie eine volle Erstattung oder eine kostenlose Umbuchung. Maßgeblich ist die Sicherheitseinschätzung des Kapitäns.",
+        "Если тур отменён из-за погоды, вы получаете полный возврат или бесплатный перенос. Решение принимается по оценке безопасности капитана.",
+      ),
     },
   ];
 
@@ -110,7 +152,7 @@ export default async function Page({
         subtitle={t("subtitle")}
         badge="Bodrum 2026"
         image="https://images.unsplash.com/photo-1500627964684-141351970a7f?auto=format&fit=crop&w=2000&q=80"
-        crumbs={[{ href: "/", label: isTr ? "Ana Sayfa" : "Home" }, { label: t("h1") }]}
+        crumbs={[{ href: "/", label: pick("Ana Sayfa", "Home", "Startseite", "Главная") }, { label: t("h1") }]}
       />
 
       <section className="section">
@@ -126,11 +168,12 @@ export default async function Page({
               subjectLine={t("h1")}
               fields={{ date: true, people: true }}
               whatsappNumber={c("whatsappNumber")}
-              whatsappTemplate={
-                isTr
-                  ? "Merhaba, Bodrum'da tekne kiralamak istiyorum."
-                  : "Hello, I'd like to rent a boat in Bodrum."
-              }
+              whatsappTemplate={pick(
+                "Merhaba, Bodrum'da tekne kiralamak istiyorum.",
+                "Hello, I'd like to rent a boat in Bodrum.",
+                "Guten Tag, ich möchte in Bodrum ein Boot mieten.",
+                "Здравствуйте, я хотел бы арендовать лодку в Бодруме.",
+              )}
             />
           </aside>
         </div>
@@ -173,7 +216,7 @@ export default async function Page({
 
       <section className="section section-soft">
         <div className="container-page max-w-4xl">
-          <h2>{isTr ? "Sıkça Sorulanlar" : "Frequently Asked Questions"}</h2>
+          <h2>{pick("Sıkça Sorulanlar", "Frequently Asked Questions", "Häufige Fragen", "Частые вопросы")}</h2>
           <div className="mt-6">
             <FAQ items={faqItems} />
           </div>
