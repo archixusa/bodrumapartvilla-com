@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useLocale } from "next-intl";
 import { X } from "lucide-react";
 import { getReservationClient } from "@/lib/reservation-form";
+import { trackLead } from "@/lib/analytics";
 
 const STORAGE_KEY = "bav-exit-intent-dismissed";
 const TTL_MS = 30 * 24 * 60 * 60 * 1000;
@@ -220,6 +221,7 @@ export function ExitIntentModal() {
         kvkk_consent: true,
       });
       if (error) throw error;
+      trackLead({ kind: "exit_intent" });
       setStatus("ok");
       try {
         window.localStorage.setItem(STORAGE_KEY, String(Date.now()));

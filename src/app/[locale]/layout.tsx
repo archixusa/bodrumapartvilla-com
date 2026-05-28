@@ -12,6 +12,7 @@ import { AnalyticsScripts, GtmNoScript } from "@/components/Analytics";
 import { CookieConsent } from "@/components/CookieConsent";
 import { SeasonBanner } from "@/components/SeasonBanner";
 import { ExitIntentModal } from "@/components/ExitIntentModal";
+import { LeadTracking } from "@/components/LeadTracking";
 import { JsonLd } from "@/components/JsonLd";
 
 const inter = Inter({
@@ -170,6 +171,7 @@ export default async function LocaleLayout({
           <WhatsAppFab />
           <CookieConsent />
           <ExitIntentModal />
+          <LeadTracking />
         </NextIntlClientProvider>
       </body>
     </html>

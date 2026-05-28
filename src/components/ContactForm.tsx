@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { getReservationClient } from "@/lib/reservation-form";
+import { trackLead } from "@/lib/analytics";
 
 const SUBJECTS_TR = [
   { value: "general", label: "Genel Bilgi" },
@@ -88,6 +89,7 @@ export function ContactForm({ locale }: ContactFormProps) {
         kvkk_consent: true,
       });
       if (error) throw error;
+      trackLead({ kind: "contact", subject });
       setStatus("ok");
       setName("");
       setEmail("");

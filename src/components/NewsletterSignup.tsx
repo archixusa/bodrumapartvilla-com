@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { getReservationClient } from "@/lib/reservation-form";
+import { trackLead } from "@/lib/analytics";
 
 interface NewsletterSignupProps {
   sourcePage: string;
@@ -76,6 +77,7 @@ export function NewsletterSignup({
       if (error && !`${error.message}`.toLowerCase().includes("duplicate")) {
         throw error;
       }
+      trackLead({ kind: "newsletter", subject: sourcePage });
       setStatus("ok");
       setEmail("");
       setConsent(false);
