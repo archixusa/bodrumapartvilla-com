@@ -15,6 +15,7 @@ import { Link } from "@/i18n/routing";
 import { JsonLd } from "@/components/JsonLd";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { Testimonials } from "@/components/Testimonials";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://bodrumapartvilla.com";
@@ -699,6 +700,9 @@ export default async function HomePage({
           </div>
         </div>
       </section>
+
+      {/* TESTIMONIALS — quiet guest social proof */}
+      <Testimonials max={3} />
     </>
   );
 }
