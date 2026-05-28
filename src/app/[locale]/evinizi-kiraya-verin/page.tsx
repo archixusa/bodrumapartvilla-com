@@ -30,26 +30,26 @@ export default async function Page({
   const benefits = [
     {
       icon: Award,
-      title: "Premium Misafir Profili",
-      desc: "Doğrulanmış, yüksek gelirli, sorumlu misafirler. Her rezervasyon öncesi profil incelenir; abuse riskini sıfıra yakın tutuyoruz.",
+      title: "Doğru Misafir Profili",
+      desc: "Doğrulanmış, yüksek gelirli, sorumlu misafirler. Her rezervasyon öncesi profil incelenir; olası sorun riskini en aza indiriyoruz.",
     },
     {
       icon: Heart,
       title: "Atmosferin Korunması",
-      desc: "Villanızın karakteri, tasarımı ve mahremiyeti birinci önceliğimiz. Her giriş sonrası eksiksiz check yapar, malzeme/yapı değişimine asla izin vermeyiz.",
+      desc: "Villanızın karakteri, tasarımı ve mahremiyeti birinci önceliğimiz. Her çıkış sonrası eksiksiz kontrol eder, malzeme/yapı değişimine asla izin vermeyiz.",
     },
     {
       icon: Globe2,
       title: "Avrupa ve Yerli Erişim",
-      desc: "Sitelerimiz TR/EN/DE/RU dört dilde yayında. Bal ayı çiftleri, geniş aileler ve Avrupa'dan gelen üst segment misafirleri direkt size yönlendiriyoruz.",
+      desc: "Sitelerimiz TR/EN/DE/RU dört dilde yayında. Bal ayı çiftleri, geniş aileler ve Avrupa'dan gelen seçkin misafirleri direkt size yönlendiriyoruz.",
     },
   ];
 
   const stats = [
-    { value: "₺ 42K", label: "Ortalama gecelik" },
+    { value: "42.000 ₺", label: "Ortalama gecelik" },
     { value: "%76", label: "Yaz doluluk" },
     { value: "4.9", label: "Misafir puanı" },
-    { value: "30%", label: "AB ülkesi misafir" },
+    { value: "%30", label: "AB ülkesi misafir" },
   ];
 
   const principles = [
@@ -70,7 +70,7 @@ export default async function Page({
   const faqs = [
     {
       q: "Komisyon oranı kaç?",
-      a: "Sabit %15. Premium tier yoktur, gizli ücret yoktur. Pazarlama, profesyonel fotoğraf, drone çekimi, çok dilli içerik üretimi, tüm operasyonel maliyetler bu orana dahildir.",
+      a: "Sabit %15. Ek paket, gizli kademe yoktur, gizli ücret yoktur. Pazarlama, profesyonel fotoğraf, drone çekimi, çok dilli içerik üretimi, tüm operasyonel maliyetler bu orana dahildir.",
     },
     {
       q: "Misafirleri nasıl filtreliyorsunuz?",
@@ -90,15 +90,15 @@ export default async function Page({
     },
     {
       q: "Fiyatlandırma dinamik mi?",
-      a: "Evet. Sezon yoğunluğuna, hafta sonu/hafta içi farkına, AB tatil dönemlerine ve büyük etkinliklere (Bodrum Yelken Festivali vb.) göre fiyat optimizasyonu yapıyoruz. Karar her zaman sizinle birlikte alınır — biz tavsiye veririz, son söz sizdedir.",
+      a: "Evet. Sezon yoğunluğuna, hafta sonu/hafta içi farkına, AB tatil dönemlerine ve büyük etkinliklere (Bodrum Yelken Festivali vb.) göre fiyatları sezona göre özenle ayarlıyoruz. Karar her zaman sizinle birlikte alınır — biz tavsiye veririz, son söz sizdedir.",
     },
     {
-      q: "Hasar ve abuse durumu?",
+      q: "Hasar ve kötü kullanım durumunda ne oluyor?",
       a: "5.000-15.000 TL arası depozito (mülk değerine göre). Hasar durumunda profesyonel fotoğraflı kayıt + raporlama. Tahsilat misafirden, yetmezse depozitodan. Türkiye'nin önde gelen turizm sigortası şirketleriyle anlaşmamız var; premium mülkler için yıllık abonelik öneriyoruz.",
     },
     {
       q: "Hangi bölgelerle çalışıyorsunuz?",
-      a: "Bodrum yarımadasının özellikle özel havuzlu villa segmenti yoğun olduğu bölgeler: Yalıkavak, Türkbükü, Gündoğan, Torba, Bitez'in iç kısmı. Apartlar için tüm bölgeler.",
+      a: "Bodrum yarımadasının özellikle özel havuzlu villaların yoğun olduğu bölgeler: Yalıkavak, Türkbükü, Gündoğan, Torba, Bitez'in iç kısmı. Apartlar için tüm bölgeler.",
     },
   ];
 
@@ -153,9 +153,8 @@ export default async function Page({
             </h1>
             <span className="mx-auto mt-7 block h-px w-20 bg-accent-400" />
             <p className="mt-7 text-base text-white/85 md:text-lg">
-              Mülkünüzü deneyim odaklı misafirlerle buluşturuyor, gelirinizi
-              premium segmentte konumlandırıyoruz. Atmosfer korunur, kazanç
-              yükselir, siz huzurlu kalırsınız.
+              Mülkünüzü doğru misafirle, hak ettiği değerde buluşturuyoruz.
+              Atmosfer korunur, kazanç yükselir, siz huzurlu kalırsınız.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <a href="#basvur" className="btn-primary">
@@ -175,7 +174,7 @@ export default async function Page({
           <div className="mx-auto max-w-2xl text-center">
             <span className="kicker">Yaklaşımımız</span>
             <h2 className="mt-4">
-              <span className="font-display italic">Premium</span> segmente özel
+              <span className="font-display italic">Seçici</span> bir yaklaşım
             </h2>
             <span className="divider-accent mt-5 block" />
           </div>

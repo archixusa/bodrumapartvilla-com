@@ -267,7 +267,7 @@ export default async function HomePage({
               </Link>
               <Link href="/evinizi-kiraya-verin" className="btn-secondary">
                 {isTr
-                  ? "Villanızı Bizimle Yönetin"
+                  ? "Villanızı Değerlendirelim"
                   : "Entrust Your Villa to Us"}
               </Link>
             </div>
@@ -461,7 +461,7 @@ export default async function HomePage({
               <div className="flex flex-col items-start gap-4 lg:items-end">
                 <Link href="/evinizi-kiraya-verin" className="btn-primary">
                   {isTr
-                    ? "Villanızı Bizimle Yönetin"
+                    ? "Villanızı Değerlendirelim"
                     : "Entrust Your Villa to Us"}
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>

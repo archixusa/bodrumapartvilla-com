@@ -162,7 +162,7 @@ export default async function Page({
               {isTr ? "İletişim Sayfası" : "Contact Page"}
             </Link>
             <Link href="/evinizi-kiraya-verin" className="btn-secondary">
-              {isTr ? "Villanızı Bizimle Yönetin" : "Entrust Your Villa to Us"}
+              {isTr ? "Villanızı Değerlendirelim" : "Entrust Your Villa to Us"}
             </Link>
           </div>
         </section>

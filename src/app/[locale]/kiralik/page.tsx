@@ -60,7 +60,7 @@ export default async function KiralikPage({
       }
       ctaPrimaryHref="/iletisim"
       ctaSecondaryLabel={
-        isTr ? "Villanızı Bizimle Yönetin" : "Entrust Your Property to Us"
+        isTr ? "Villanızı Değerlendirelim" : "Entrust Your Property to Us"
       }
       ctaSecondaryHref="/evinizi-kiraya-verin"
       philosophyKicker={isTr ? "Yaklaşım" : "Approach"}

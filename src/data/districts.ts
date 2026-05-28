@@ -46,7 +46,7 @@ export const districts: District[] = [
     shortDescTr: "Sahile yakın hareketli koy; yamacında havuzlu villa siteleri.",
     shortDescEn: "Lively beachfront cove with hillside villa complexes above.",
     longDescTr:
-      "Gümbet denince çoğu kişinin aklına ilk olarak hareketli sahil hattı gelir; oysa koyun arkasındaki yamaçlarda son on yılda yükselen butik villa siteleri bambaşka bir tatil hikayesi sunar. Bodrum merkezine yürüme mesafesindeki konumu sayesinde, akşam çıkışlarınızı kolayca planlar, geceyi havuz başında dinlenerek bitirirsiniz. Villa seçenekleri genellikle 3-5 yatak odalı, özel havuzlu ve manzara terasları olan yapılardır; bahçeli müstakil seçenekler ise daha çok Bardakçı Koyu yönünde yer alır. Apart segmentinde ise sahile birkaç dakika yürüme mesafesinde, site içi ortak havuzlu daireler ön plandadır — kalabalık aileler için ekonomik, gençler için merkezi. Gümbet'te kalmanın asıl avantajı ulaşım: marinaya, kaleye, Bardakçı'ya, Bitez'e dakikalar içinde ulaşırsınız ve dolmuş seferleri tüm gece sürer. Aile odaklı misafirler için sahilin daha sakin doğu ucundaki villaları öneririz; arkadaş grupları için ise merkezi caddenin sırtındaki teraslı apart siteleri uygun olur.",
+      "Gümbet denince çoğu kişinin aklına ilk olarak hareketli sahil hattı gelir; oysa koyun arkasındaki yamaçlarda son on yılda yükselen butik villa siteleri bambaşka bir tatil hikayesi sunar. Bodrum merkezine yürüme mesafesindeki konumu sayesinde, akşam çıkışlarınızı kolayca planlar, geceyi havuz başında dinlenerek bitirirsiniz. Villa seçenekleri genellikle 3-5 yatak odalı, özel havuzlu ve manzara terasları olan yapılardır; bahçeli müstakil seçenekler ise daha çok Bardakçı Koyu yönünde yer alır. Apart tarafında ise sahile birkaç dakika yürüme mesafesinde, site içi ortak havuzlu daireler ön plandadır — kalabalık aileler için ekonomik, gençler için merkezi. Gümbet'te kalmanın asıl avantajı ulaşım: marinaya, kaleye, Bardakçı'ya, Bitez'e dakikalar içinde ulaşırsınız ve dolmuş seferleri tüm gece sürer. Aile odaklı misafirler için sahilin daha sakin doğu ucundaki villaları öneririz; arkadaş grupları için ise merkezi caddenin sırtındaki teraslı apart siteleri uygun olur.",
     longDescEn:
       "Gümbet is best known for its lively shoreline, yet the hillsides behind the cove tell a different story — boutique villa complexes built over the last decade now offer a calmer side to this address. Walking distance to Bodrum centre makes evenings easy: head out for dinner, return to the pool. Villas here are typically 3 to 5 bedrooms with private pools and view terraces; detached options with private gardens lean toward the Bardakçı Cove side. On the apartment side, complexes with shared pools sit just minutes from the beach — economical for large families, central for younger groups. The real advantage of Gümbet is reach: the marina, the castle, Bardakçı and Bitez are all minutes away, and dolmuş minibuses run through the night. We point families to the calmer eastern side of the bay and put friend groups in the terraced complexes behind the main avenue.",
     heroImage:
@@ -76,7 +76,7 @@ export const districts: District[] = [
     shortDescTr: "Uzun sahil, gün batımı manzaralı villa terasları.",
     shortDescEn: "Long shoreline with sunset-facing villa terraces.",
     longDescTr:
-      "Bodrum yarımadasının batı ucunda yer alan Turgutreis, akşam saatlerinde Türkiye'nin en güzel gün batımı sahnelerinden birine ev sahipliği yapar; bu yüzden villa yatırımcılarının uzun süredir gözdesidir. Sahile cepheli, batı yönüne bakan teraslı villalar burada özel bir konumda — havuz başında dünya batarken cama vuran turuncu hâlâ misafirlerin en çok fotoğrafladığı an. Akyarlar ve Aspat tarafındaki müstakil villalar arasında bütçeye uygun aile evlerinden lüks bal ayı seçeneklerine kadar geniş bir aralık vardır. Merkezde apart segmenti uygundur ve cumartesi pazarı, marinası, restoran hattı sayesinde villa misafirlerinin gün içi vakit geçirmesi için pratik bir aks oluşturur. Kos adasına tekneyle bir saatte ulaşırsınız; çift dolu villa ya da geniş ailenin günlük bir Yunan adası çıkmasını planlamak buradan en kolayıdır.",
+      "Bodrum yarımadasının batı ucunda yer alan Turgutreis, akşam saatlerinde Türkiye'nin en güzel gün batımı sahnelerinden birine ev sahipliği yapar; bu yüzden villa yatırımcılarının uzun süredir gözdesidir. Sahile cepheli, batı yönüne bakan teraslı villalar burada özel bir konumda — havuz başında dünya batarken cama vuran turuncu hâlâ misafirlerin en çok fotoğrafladığı an. Akyarlar ve Aspat tarafındaki müstakil villalar arasında bütçeye uygun aile evlerinden lüks bal ayı seçeneklerine kadar geniş bir aralık vardır. Merkezde apart tarafı uygundur ve cumartesi pazarı, marinası, restoran hattı sayesinde villa misafirlerinin gün içi vakit geçirmesi için pratik bir aks oluşturur. Kos adasına tekneyle bir saatte ulaşırsınız; çift dolu villa ya da geniş ailenin günlük bir Yunan adası çıkmasını planlamak buradan en kolayıdır.",
     longDescEn:
       "On the western tip of the peninsula, Turgutreis hosts one of Turkey's most photographed sunsets, which is precisely why villa investors have long favoured the area. West-facing terraced villas overlooking the sea hold a special spot — the orange glow on the pool deck is the most-photographed moment of many trips. Detached villas around Akyarlar and Aspat span family budgets to honeymoon-grade luxury. The apartment market sits in the centre, where the Saturday market, the marina and the restaurant row create a practical day-to-day axis for villa guests. Kos is a one-hour ferry away — easy if a villa or full family wants to fit a Greek island day in.",
     heroImage:
@@ -106,7 +106,7 @@ export const districts: District[] = [
     shortDescTr: "Süper yat marinası, yamaçta özel havuzlu lüks villalar.",
     shortDescEn: "Superyacht marina and luxury private-pool villas on the hillside.",
     longDescTr:
-      "Yalıkavak, son yıllarda Bodrum'un en lüks tatil rotası olarak tanımlanır oldu; bal ayı çiftleri, kurumsal gruplar ve uzun konaklamalı aileler için bu sitenin öne çıkardığı en güçlü adres burası. Yamaç sırtında, denize hakim teraslarla dizilmiş özel havuzlu villalar burada bir karakter taşır: havuza tatlı bir eğimle inen bahçeler, marinanın ışıklarını gece boyu gören oturma alanları ve infinity pool şablonu bu bölgenin standardıdır. Tilkicik ve Kudur koylarına araç ile dakikalar içinde ulaşırsınız; sezonun yoğun günlerinde villanızdan tekne çağırıp Sandıma ya da Cennet Adası'na yarım günlük kaçamak en sevilen pratik rotalardandır. Apart segmentinde ise eski Yalıkavak köyünün arka sokaklarında, beyaz badanalı yapılarda butik daireler bulunur — çift ve küçük aile için uygundur. Akşam yemeği için marinadaki şef restoranları, gündüz için sahil iskeleleri ve butik mağaza hattı bölgenin günlük ritmini şekillendirir.",
+      "Yalıkavak, son yıllarda Bodrum'un en lüks tatil rotası olarak tanımlanır oldu; bal ayı çiftleri, kurumsal gruplar ve uzun konaklamalı aileler için bu sitenin öne çıkardığı en güçlü adres burası. Yamaç sırtında, denize hakim teraslarla dizilmiş özel havuzlu villalar burada bir karakter taşır: havuza tatlı bir eğimle inen bahçeler, marinanın ışıklarını gece boyu gören oturma alanları ve infinity pool şablonu bu bölgenin standardıdır. Tilkicik ve Kudur koylarına araç ile dakikalar içinde ulaşırsınız; sezonun yoğun günlerinde villanızdan tekne çağırıp Sandıma ya da Cennet Adası'na yarım günlük kaçamak en sevilen pratik rotalardandır. Apart tarafında ise eski Yalıkavak köyünün arka sokaklarında, beyaz badanalı yapılarda butik daireler bulunur — çift ve küçük aile için uygundur. Akşam yemeği için marinadaki şef restoranları, gündüz için sahil iskeleleri ve butik mağaza hattı bölgenin günlük ritmini şekillendirir.",
     longDescEn:
       "Yalıkavak has become Bodrum's most luxurious holiday route in recent years — and this site's headline choice for honeymoon couples, corporate groups and long-stay families. Private-pool villas line the hillside with terraces facing the sea: gently sloping gardens that step down to the water, living areas with marina lights all night, and the infinity-pool layout that defines the area. Tilkicik and Kudur coves are minutes away; on peak days, calling a boat to your villa for a half-day at Sandıma or Paradise Island is a beloved ritual. The apartment side hides in the back streets of the old village, in whitewashed buildings — best for couples and small families. Chef restaurants on the marina anchor the evening; daytime is shaped by sea-front piers and the boutique shop row.",
     heroImage:
@@ -141,7 +141,7 @@ export const districts: District[] = [
             body: "Yalıkavak, Bodrum'da lüksün sessiz biçimde olgunlaştığı tek koydur. Palmarina'nın 2014 sonrası açılışıyla birlikte gelen süperyat hareketi, koyun batı yamacında butik villaların oluştuğu bir hattı tetikledi; ancak bu hattın asıl niteliği gösterişten çok ölçüdür. Mimari, beyaz badana ve doğal taşın orta yolunda durur. Eski Yalıkavak köyünün arka sokaklarında hâlâ ev yapımı tarhana satan teyzeler, koyun bir ucundaki sanatçı stüdyoları ve marinanın diğer ucundaki butik mağaza hattı — bu üçü, Yalıkavak'ı bir butik tatil adresi olarak ayakta tutan dayanak noktalarıdır.",
           },
           {
-            heading: "Premium Misafir Profili",
+            heading: "Misafir Profili",
             body: "Yalıkavak villaları, Türkiye'nin yaratıcı ve kurumsal kesimi, Avrupa'nın olgun butik tatil müşterisi ve yat sahibi misafirler tarafından tercih edilir. Bal ayı çiftleri için sezon dışı tatilde sakin, sezon ortasında ise marina hareketiyle dengeli bir adres. Aileler için yamaca dizilmiş özel havuzlu villalar; çiftler için marina yakınında butik tek odalı evler. Kurumsal etkinlikler için 8-12 kişilik villalar yıl içinde 2-3 küçük gruba ev sahipliği yapar.",
           },
           {
@@ -150,7 +150,7 @@ export const districts: District[] = [
           },
           {
             heading: "Villa Profili: Yamaçtan Sahile",
-            body: "Yalıkavak'ta tipik villa 4-6 yatak odalı, özel havuzlu, 280-500 metrekare arasında, denize cepheli bir terasla şekillenir. Yamaca dizilmiş villaların büyük bölümü infinity havuz tasarımıyla gelir. Sahile cepheli ya da özel iskeleli villalar nadir bulunur ve fiyat segmentini yukarı çeker. Yüksek sezon (Temmuz-Ağustos) fiyatları 3.500-5.000 TL/gece bandında; sezon dışında 2.500-3.500 TL/gece civarında dolaşır.",
+            body: "Yalıkavak'ta tipik villa 4-6 yatak odalı, özel havuzlu, 280-500 metrekare arasında, denize cepheli bir terasla şekillenir. Yamaca dizilmiş villaların büyük bölümü infinity havuz tasarımıyla gelir. Sahile cepheli ya da özel iskeleli villalar nadir bulunur ve fiyatı yukarı çeker. Yüksek sezon (Temmuz-Ağustos) fiyatları 3.500-5.000 TL/gece bandında; sezon dışında 2.500-3.500 TL/gece civarında dolaşır.",
           },
           {
             heading: "Gastronomi: Marinada Şef, Köyde Meyhane",
@@ -196,7 +196,7 @@ export const districts: District[] = [
           },
           {
             q: "Yalıkavak'ta villa fiyat aralığı?",
-            a: "Yüksek sezonda 3.500-5.000 TL/gece; sezon dışında 2.500-3.500 TL/gece bandı geçerlidir. Lüks segment bunun üzerine çıkar.",
+            a: "Yüksek sezonda 3.500-5.000 TL/gece; sezon dışında 2.500-3.500 TL/gece bandı geçerlidir. En üst sınıf villalar bunun üzerine çıkar.",
           },
           {
             q: "Sandıma köyü ne kadar uzakta?",
@@ -273,7 +273,7 @@ export const districts: District[] = [
     shortDescTr: "Yahşi plajı arkasında geleneksel köy ve bahçeli villalar.",
     shortDescEn: "Traditional village and garden villas behind Yahşi beach.",
     longDescTr:
-      "Ortakent, yarımadanın 1 kilometreyi bulan en uzun kumsalı Yahşi'yi sahiplenir; ancak villa seçenekleri açısından asıl ilginç olan plajın arkasındaki geleneksel köy dokusudur. Bu iç kısımda taş duvarlar, eski Bodrum mimarisi ve mandalina-zeytin ağaçlarıyla çevrelenmiş bahçeli villalar bulunur; çoğunluğu özel havuzlu, 3-5 yatak odalıdır ve sokak gürültüsünden tamamen uzaktır. Salı pazarı, Mustafa Paşa Kulesi ve sahil arasındaki yürüyüş yolu villa misafirlerinin günlük ritmini şekillendirir. Apart segmentinde Yahşi plajı önündeki site daireleri öne çıkar — kahvaltıdan sonra terastan inip kumsala 30 saniyede ulaşmak isteyen aile için kusursuz. Bodrum merkezine 10 dakika, Bitez'e yürüme mesafesi, Gümbet'e sahil yolu olduğundan kalkıştan dönüşe çok pratik bir merkez sayılır.",
+      "Ortakent, yarımadanın 1 kilometreyi bulan en uzun kumsalı Yahşi'yi sahiplenir; ancak villa seçenekleri açısından asıl ilginç olan plajın arkasındaki geleneksel köy dokusudur. Bu iç kısımda taş duvarlar, eski Bodrum mimarisi ve mandalina-zeytin ağaçlarıyla çevrelenmiş bahçeli villalar bulunur; çoğunluğu özel havuzlu, 3-5 yatak odalıdır ve sokak gürültüsünden tamamen uzaktır. Salı pazarı, Mustafa Paşa Kulesi ve sahil arasındaki yürüyüş yolu villa misafirlerinin günlük ritmini şekillendirir. Apart tarafında Yahşi plajı önündeki site daireleri öne çıkar — kahvaltıdan sonra terastan inip kumsala 30 saniyede ulaşmak isteyen aile için kusursuz. Bodrum merkezine 10 dakika, Bitez'e yürüme mesafesi, Gümbet'e sahil yolu olduğundan kalkıştan dönüşe çok pratik bir merkez sayılır.",
     longDescEn:
       "Ortakent claims Yahşi, the peninsula's longest sandy beach at nearly a kilometre — but the more interesting villa story sits in the traditional village right behind it. Stone walls, old Bodrum architecture and gardens lined with tangerine and olive trees frame villas that are mostly private-pool, 3 to 5 bedrooms, and entirely removed from street noise. The Tuesday market, the Mustafa Paşa Tower and the walking path to the beach shape the daily rhythm. The apartment side fronts Yahşi beach in shoreline complexes — perfect when the family wants to walk down for a swim in 30 seconds. Ten minutes to Bodrum centre, a walk to Bitez and a short coast-road drive to Gümbet make this a practical base.",
     heroImage:
@@ -303,7 +303,7 @@ export const districts: District[] = [
     shortDescTr: "Sakin koy, denize hakim yamaç villaları.",
     shortDescEn: "Quiet cove with hillside villas overlooking the sea.",
     longDescTr:
-      "Gündoğan, Yalıkavak ile Türkbükü arasında saklı kalmış sakin bir koydur; lüksü gösterişten uzak, dingin bir biçimde yaşamak isteyenlerin tercihidir. Yamaçtaki villalar denize cepheli, ferah teraslı ve çoğunlukla özel havuzludur; küçük guruplara da uygun 3 odalı seçenekler de bulunur. Sahili çakıllı ve sezon sonunda bile yüzülebilir biçimde sakindir; Cennet Adası'na yapılan günlük tekne çıkışları bölgenin imzasıdır. Akşam yemeği için sahildeki birkaç Akdeniz mutfağı restoranı yeterli olur; daha hareketli bir gece için Yalıkavak'a 5 dakika araba mesafesindedir. Apart segmenti burada azdır ve genelde yamaç yönlü, deniz manzaralı küçük daireler şeklindedir. Aile, uzun konaklayan emekli çift ve yavaş tatil arayan misafirler için doğru adres.",
+      "Gündoğan, Yalıkavak ile Türkbükü arasında saklı kalmış sakin bir koydur; lüksü gösterişten uzak, dingin bir biçimde yaşamak isteyenlerin tercihidir. Yamaçtaki villalar denize cepheli, ferah teraslı ve çoğunlukla özel havuzludur; küçük guruplara da uygun 3 odalı seçenekler de bulunur. Sahili çakıllı ve sezon sonunda bile yüzülebilir biçimde sakindir; Cennet Adası'na yapılan günlük tekne çıkışları bölgenin imzasıdır. Akşam yemeği için sahildeki birkaç Akdeniz mutfağı restoranı yeterli olur; daha hareketli bir gece için Yalıkavak'a 5 dakika araba mesafesindedir. Apart tarafı burada azdır ve genelde yamaç yönlü, deniz manzaralı küçük daireler şeklindedir. Aile, uzun konaklayan emekli çift ve yavaş tatil arayan misafirler için doğru adres.",
     longDescEn:
       "Gündoğan is the calm cove hidden between Yalıkavak and Türkbükü — a choice for guests who want luxury without spectacle. The hillside villas face the sea with generous terraces, mostly with private pools; smaller 3-bedroom options suit couples and tight groups. The pebble shoreline stays calm enough for swimming into the late season; day trips to Paradise Island define the area. A handful of seafront Aegean restaurants cover the evenings; for more energy, Yalıkavak is a 5-minute drive away. The apartment market is small here, mostly hillside studios and one-bedrooms with sea views. The right address for families, long-stay couples and slow-travel guests.",
     heroImage:
@@ -333,7 +333,7 @@ export const districts: District[] = [
     shortDescTr: "Havalimanına en yakın koy, sakin resort villaları.",
     shortDescEn: "Closest cove to the airport, with calm resort-style villas.",
     longDescTr:
-      "Torba, Milas-Bodrum Havalimanı'na sadece 25 dakika mesafesiyle iniş sonrası en hızlı dinlenme adresi sayılır. Kuzey sahildedir, sığ ve sakin sularıyla çocuklu aileler için son derece güvenlidir. Villa segmenti burada genellikle resort hattının arkasında, müstakil ve havuzlu yapılardadır; bahçeleri geniş, akşamları yıldız izlemeye uygun teraslıdır. Apart segmentinde modern site daireleri ön plandadır; çoğunlukla site içi havuzlu ve havalimanı misafirleri için 'inip dinlenme' düşüncesiyle tasarlanmıştır. Gece eğlencesi villada veya resort içindedir; daha hareketli bir akşam için Bodrum merkezi 15 dakika sürer. Çift ya da geniş aile için kalabalıktan kaçınmak isteyenlerin doğru tercihidir.",
+      "Torba, Milas-Bodrum Havalimanı'na sadece 25 dakika mesafesiyle iniş sonrası en hızlı dinlenme adresi sayılır. Kuzey sahildedir, sığ ve sakin sularıyla çocuklu aileler için son derece güvenlidir. Villalar burada genellikle resort hattının arkasında, müstakil ve havuzlu yapılardadır; bahçeleri geniş, akşamları yıldız izlemeye uygun teraslıdır. Apart tarafında modern site daireleri ön plandadır; çoğunlukla site içi havuzlu ve havalimanı misafirleri için 'inip dinlenme' düşüncesiyle tasarlanmıştır. Gece eğlencesi villada veya resort içindedir; daha hareketli bir akşam için Bodrum merkezi 15 dakika sürer. Çift ya da geniş aile için kalabalıktan kaçınmak isteyenlerin doğru tercihidir.",
     longDescEn:
       "Torba sits just 25 minutes from Milas-Bodrum Airport — the fastest 'land and rest' address on the peninsula. On the north shore, with calm shallow water, it's exceptionally safe for families with children. The villa market here mostly takes a detached, private-pool form behind the resort row, with wide gardens and terraces well-suited to star-watching evenings. The apartment side leans modern, with shared pools and a build philosophy of 'land, settle, switch off'. Evening life happens at the villa or inside the resorts; for more energy, Bodrum centre is a 15-minute drive. The right choice for couples or large families who want to avoid the peak-day crowd.",
     heroImage:
@@ -368,7 +368,7 @@ export const districts: District[] = [
             body: "Milas-Bodrum Havalimanı'ndan yarım saatlik bir araç yolculuğunun ardından, Torba bambaşka bir tempoyla karşılar. Kuzey yamaçtaki taş duvarlı villaların önünden geçen tek bir sahil yolu, koyun bütün ritmini şekillendirir. Mimari, beyaz badanalı modern hatlar ile eski Bodrum taş işçiliğinin uzlaştığı bir orta yolda durur; villaların büyük bölümü tek katlı, geniş bir teras üzerine yayılır. Bahçeler defne, biberiye ve eski zeytin ağaçlarıyla çevrilidir. Geceleri, koyun karşı yamacındaki köy ışıkları dışında neredeyse hiçbir ışık kalmaz.",
           },
           {
-            heading: "Premium Misafir Profili",
+            heading: "Misafir Profili",
             body: "Torba, ışıltıdan ziyade dinginlik arayan çiftlerin, küçük yaşlardaki çocuklarıyla yorulmadan tatil yapmak isteyen ailelerin ve emekliliği boyunca aynı koya yıllarca dönen uzun konaklayan misafirlerin sevdiği bir adrestir. Sığ ve sakin deniz, çocuklu aileler için belirleyici bir avantajdır. Kalabalık beach club kültürünün hâkim olduğu Türkbükü'ne 10, butik marina hareketliliğinin görüldüğü Yalıkavak'a 20 dakika mesafede olması; misafirin günü kendi temposunda kuracağı, akşamın hareketini istediğinde başka bir koya bırakabileceği bir denge sunar.",
           },
           {
@@ -377,7 +377,7 @@ export const districts: District[] = [
           },
           {
             heading: "Torba'da Villa Profili",
-            body: "Bölgenin tipik villası 4-6 misafir kapasitesinde, özel havuzlu, 250-450 metrekare arasında ve denize cepheli bir teras barındırır. Sahile çoğunlukla araba veya kısa bir yürüyüş; en üst segmentteki villaların özel iskele kullanım hakkı vardır. Yüksek sezonda (Temmuz-Ağustos) fiyatlar 2500-4000 TL/gece bandında dolaşır; Mayıs-Haziran ve Eylül-Ekim aralığında 1500-2500 TL'ye iner. Konsiyerj ekibimiz, ihtiyaç duyduğunuz takdirde havalimanından villaya kadar transferi ve karşılama servisini birlikte planlar.",
+            body: "Bölgenin tipik villası 4-6 misafir kapasitesinde, özel havuzlu, 250-450 metrekare arasında ve denize cepheli bir teras barındırır. Sahile çoğunlukla araba veya kısa bir yürüyüş; en donanımlı villaların özel iskele kullanım hakkı vardır. Yüksek sezonda (Temmuz-Ağustos) fiyatlar 2500-4000 TL/gece bandında dolaşır; Mayıs-Haziran ve Eylül-Ekim aralığında 1500-2500 TL'ye iner. Konsiyerj ekibimiz, ihtiyaç duyduğunuz takdirde havalimanından villaya kadar transferi ve karşılama servisini birlikte planlar.",
           },
           {
             heading: "Torba'da Gastronomi",
@@ -427,7 +427,7 @@ export const districts: District[] = [
           },
           {
             q: "Torba'da fiyatlar ne aralıkta?",
-            a: "Premium butik villalar yüksek sezonda 2.500-4.000 TL/gece; düşük sezonda 1.500-2.500 TL/gece bandında yer alır. Lüks segment bunun üzerine çıkar.",
+            a: "Premium butik villalar yüksek sezonda 2.500-4.000 TL/gece; düşük sezonda 1.500-2.500 TL/gece bandında yer alır. En üst sınıf villalar bunun üzerine çıkar.",
           },
           {
             q: "Torba'dan Bodrum merkezine nasıl gidilir?",
@@ -505,7 +505,7 @@ export const districts: District[] = [
             body: "Bodrum'un en gösterişli adresi olduğu kadar, en olgun olanıdır. Sahil hattı boyunca uzanan ahşap iskeleler, koyu Akdeniz'in herhangi bir lüks adresinden ayırır; çoğu beach club kendi iskelesini, mutfağını ve müzik kürasyonunu kendisi yönetir. Yamaçta yer alan villaların büyük bölümü 1990 sonrasının yapılarıdır ve mimarlık ofisleriyle birlikte tasarlanmıştır. Beyaz ve gri kullanımı baskındır; bahçe planlaması zeytin, lavanta ve okaliptüs ile yapılır.",
           },
           {
-            heading: "Premium Misafir Profili: Kim Geliyor?",
+            heading: "Misafir Profili: Kim Geliyor?",
             body: "Türkbükü'ne gelen misafir, lüksü aramaya gelmez; lüksü bilen ve onunla rahatlık içinde yaşamaya geliyor olarak gelir. Aileler için ölçek genelde 8-12 kişiliktir; bal ayı çiftleri 2-4 kişilik küçük ama bütünüyle özel havuzlu villaları tercih eder. Kurumsal gruplar, yıl içinde 2-3 küçük etkinliği bu adresten yapar. Ortalama konaklama 6-10 gündür ve misafirler genellikle sezonun aynı haftasını her yıl rezerve eder.",
           },
           {
@@ -514,7 +514,7 @@ export const districts: District[] = [
           },
           {
             heading: "Türkbükü'nde Villa Profili",
-            body: "Tipik Türkbükü villası 4-6 yatak odalı, 8-12 misafir kapasiteli, geniş bir özel havuzlu ve denize cepheli bir terasla şekillenir. Mutfaklar mimarisi gereği büyük ve özel şefe uygun donanıma sahiptir. En üst segmentte özel iskele, helikopter pisti veya doğrudan beach club geçişi olan villalar yer alır. Yüksek sezon (Temmuz-Ağustos) fiyatları 3.500-5.000 TL/gece bandında; sezon dışında 2.500-3.500 TL/gece civarındadır. Lüks segment bu rakamların üstüne çıkar.",
+            body: "Tipik Türkbükü villası 4-6 yatak odalı, 8-12 misafir kapasiteli, geniş bir özel havuzlu ve denize cepheli bir terasla şekillenir. Mutfaklar mimarisi gereği büyük ve özel şefe uygun donanıma sahiptir. En üst sınıf villalarda özel iskele, helikopter pisti veya doğrudan beach club geçişi olan villalar yer alır. Yüksek sezon (Temmuz-Ağustos) fiyatları 3.500-5.000 TL/gece bandında; sezon dışında 2.500-3.500 TL/gece civarındadır. En üst sınıf villalar bunun üzerine çıkar.",
           },
           {
             heading: "Gastronomi: Şef Mutfağından Meyhaneye",
@@ -556,7 +556,7 @@ export const districts: District[] = [
         tr: [
           {
             q: "Türkbükü'nde villa fiyatları nedir?",
-            a: "Yüksek sezonda (Temmuz-Ağustos) 3.500-5.000 TL/gece bandı standarttır; lüks segment bunun üzerine çıkar. Sezon başı/sonu fiyatları 2.500-3.500 TL/gece civarında seyreder.",
+            a: "Yüksek sezonda (Temmuz-Ağustos) 3.500-5.000 TL/gece bandı standarttır; en üst sınıf villalar bunun üzerine çıkar. Sezon başı/sonu fiyatları 2.500-3.500 TL/gece civarında seyreder.",
           },
           {
             q: "Macakızı'na yakın villa kiralanır mı?",
@@ -651,7 +651,7 @@ export const districts: District[] = [
           },
           {
             heading: "Villa Profili",
-            body: "Gümüşlük villaları genellikle 4-5 yatak odalı, özel havuzlu ve 180-350 metrekare civarında, arka yamaca yerleşmiş yapılardır. Bir kısmı eski Karakaya yoluna uzanan yamaçta, manzara terası ile birlikte gelir. Sahil cephesi nadirdir ve fiyat segmentini yukarı çeker. Yüksek sezonda 2.500-3.500 TL/gece; sezon dışında 1.800-2.500 TL/gece bandı geçerlidir. Mahremiyet, Gümüşlük villa seçiminde her zaman ilk üç kriter arasındadır.",
+            body: "Gümüşlük villaları genellikle 4-5 yatak odalı, özel havuzlu ve 180-350 metrekare civarında, arka yamaca yerleşmiş yapılardır. Bir kısmı eski Karakaya yoluna uzanan yamaçta, manzara terası ile birlikte gelir. Sahil cephesi nadirdir ve fiyatı yukarı çeker. Yüksek sezonda 2.500-3.500 TL/gece; sezon dışında 1.800-2.500 TL/gece bandı geçerlidir. Mahremiyet, Gümüşlük villa seçiminde her zaman ilk üç kriter arasındadır.",
           },
           {
             heading: "Gastronomi: Sahilde Balık, Yamacında Akdeniz",
@@ -705,7 +705,7 @@ export const districts: District[] = [
           },
           {
             q: "Gümüşlük villa fiyatları?",
-            a: "Yüksek sezonda 2.500-3.500 TL/gece; sezon dışında 1.800-2.500 TL/gece bandı geçerlidir. Sahile cepheli az sayıdaki villa üst segmentte yer alır.",
+            a: "Yüksek sezonda 2.500-3.500 TL/gece; sezon dışında 1.800-2.500 TL/gece bandı geçerlidir. Sahile cepheli az sayıdaki villa en üst sınıfta yer alır.",
           },
           {
             q: "Çocuklu aile için uygun mu?",
@@ -788,7 +788,7 @@ export const districts: District[] = [
           },
           {
             heading: "Villa Profili",
-            body: "Tipik Göltürkbükü villası 4-6 yatak odalı, 8-12 misafir kapasiteli, sahile yakın ya da sahile cepheli, geniş havuzlu yapılardır. Mutfaklar özel şef için hazır donanımdadır. En üst segment, özel iskele kullanımıyla beraber yat yanaşmasına izin verir. Yüksek sezonda 3.000-4.500 TL/gece; sezon dışında 2.200-3.000 TL/gece bandı geçerlidir.",
+            body: "Tipik Göltürkbükü villası 4-6 yatak odalı, 8-12 misafir kapasiteli, sahile yakın ya da sahile cepheli, geniş havuzlu yapılardır. Mutfaklar özel şef için hazır donanımdadır. En üst sınıf villalar, özel iskele kullanımıyla beraber yat yanaşmasına izin verir. Yüksek sezonda 3.000-4.500 TL/gece; sezon dışında 2.200-3.000 TL/gece bandı geçerlidir.",
           },
           {
             heading: "Gastronomi",
@@ -834,7 +834,7 @@ export const districts: District[] = [
           },
           {
             q: "Yat yanaşma imkânı var mı?",
-            a: "Evet. Üst segment villaların önemli bir kısmı özel iskele kullanımına sahiptir. Detaylar villaya göre değişir.",
+            a: "Evet. En üst sınıf villaların önemli bir kısmı özel iskele kullanımına sahiptir. Detaylar villaya göre değişir.",
           },
           {
             q: "Villa fiyat aralığı?",

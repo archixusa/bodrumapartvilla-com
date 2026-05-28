@@ -6,7 +6,7 @@ import { getReservationClient } from "@/lib/reservation-form";
 const SUBJECTS_TR = [
   { value: "general", label: "Genel Bilgi" },
   { value: "stay", label: "Konaklama Talebi" },
-  { value: "owner", label: "Villanızı Yönetmek" },
+  { value: "owner", label: "Villamı değerlendirmek" },
   { value: "other", label: "Diğer" },
 ] as const;
 

@@ -91,7 +91,7 @@ export default async function VillalarPage({
     ? [
         {
           q: "Bodrum'da butik villa kiralama fiyat aralığı nedir?",
-          a: "Yarımadanın bölgesine, villanın segmentine ve sezona göre 1.500-5.000 TL/gece arasında bir aralık geçerlidir. Üst segment villalar bu rakamların üzerine çıkar.",
+          a: "Yarımadanın bölgesine, villanın sınıfına ve sezona göre 1.500-5.000 TL/gece arasında bir aralık geçerlidir. Daha üst donanımlı villalar bu rakamların üzerine çıkar.",
         },
         {
           q: "Villalarda özel havuz var mı?",
@@ -190,7 +190,7 @@ export default async function VillalarPage({
       }
       ctaPrimaryHref="/iletisim"
       ctaSecondaryLabel={
-        isTr ? "Villanızı Bizimle Yönetin" : "Entrust Your Villa to Us"
+        isTr ? "Villanızı Değerlendirelim" : "Entrust Your Villa to Us"
       }
       ctaSecondaryHref="/evinizi-kiraya-verin"
       philosophyKicker={isTr ? "Felsefemiz" : "Our Philosophy"}
