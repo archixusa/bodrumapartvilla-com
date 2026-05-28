@@ -36,7 +36,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const mdx = getMdxPost(slug);
+  const mdx = getMdxPost(slug, locale);
   if (mdx) {
     const url =
       locale === "tr"
@@ -101,7 +101,7 @@ export default async function Page({
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "blog" });
 
-  const mdx = getMdxPost(slug);
+  const mdx = getMdxPost(slug, locale);
   if (mdx) return renderMdxPost(mdx, locale, t);
 
   const post = getPost(slug);
