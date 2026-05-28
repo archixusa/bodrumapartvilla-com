@@ -129,10 +129,10 @@ export default async function DistrictPage({
         ru: `Как добраться до района ${districtName}?`,
       }),
       a: loc(locale, {
-        tr: `Milas-Bodrum Havalimanı'ndan ${districtName}'a VIP transfer hizmetimiz vardır. Ortalama transfer süresi 30-50 dakikadır; rezervasyon sırasında talep edebilirsiniz.`,
-        en: `We provide VIP transfer from Milas-Bodrum Airport to ${districtName}. Average transfer time is 30-50 minutes; request it during booking.`,
-        de: `Wir bieten einen privaten Transfer vom Flughafen Milas-Bodrum nach ${districtName}. Die durchschnittliche Fahrzeit beträgt 30-50 Minuten; Sie können ihn bei der Buchung anfragen.`,
-        ru: `Мы предоставляем индивидуальный трансфер из аэропорта Милас-Бодрум до района ${districtName}. Среднее время в пути 30-50 минут; вы можете запросить его при бронировании.`,
+        tr: `Milas-Bodrum Havalimanı'ndan ${districtName}'a VIP transfer hizmetimiz vardır. Ortalama transfer süresi 30-50 dakikadır; konsiyerj ekibimize yazdığınızda planlamanıza ekleyebiliriz.`,
+        en: `We provide VIP transfer from Milas-Bodrum Airport to ${districtName}. Average transfer time is 30-50 minutes; just mention it when you reach our concierge.`,
+        de: `Wir bieten einen privaten Transfer vom Flughafen Milas-Bodrum nach ${districtName}. Die durchschnittliche Fahrzeit beträgt 30-50 Minuten; erwähnen Sie ihn einfach bei Ihrer Anfrage an unseren Concierge.`,
+        ru: `Мы предоставляем индивидуальный трансфер из аэропорта Милас-Бодрум до района ${districtName}. Среднее время в пути 30-50 минут; просто упомяните об этом, когда напишете нашему консьержу.`,
       }),
     },
     {
@@ -143,10 +143,10 @@ export default async function DistrictPage({
         ru: `Каковы цены на аренду вилл в районе ${districtName}?`,
       }),
       a: loc(locale, {
-        tr: `Yüksek sezonda özel havuzlu villalar gecelik 8.000 TL'den başlar; en üst donanımlı villalarda 22.000 TL'ye çıkabilir. Apartlar 2.400-6.500 TL aralığında değişir. Düşük sezonda fiyatlar yaklaşık %50 düşer.`,
-        en: `In high season, private-pool villas start from 8,000 TL per night and reach 22,000 TL in the luxury segment. Apartments range 2,400-6,500 TL. Low-season prices drop around 50%.`,
-        de: `In der Hochsaison beginnen Villen mit privatem Pool bei 8.000 TL pro Nacht und erreichen im gehobenen Segment 22.000 TL. Apartments liegen zwischen 2.400 und 6.500 TL. In der Nebensaison sinken die Preise um etwa 50 %.`,
-        ru: `В высокий сезон виллы с частным бассейном начинаются от 8 000 TL за ночь и доходят до 22 000 TL в изысканном сегменте. Апартаменты — в диапазоне 2 400-6 500 TL. В низкий сезон цены снижаются примерно на 50 %.`,
+        tr: `Her villa konumuna, dönemine ve donanımına göre değerlendirilir; bu yüzden fiyatları sayfada genel olarak yayınlamıyoruz. ${districtName} için tarihlerinize özel fiyat aralığını konsiyerj ekibimize yazın — size en uygun seçenekleri bütçenizle birlikte sunalım.`,
+        en: `Each villa is considered by its location, season and finish, so we don't publish blanket prices here. For a range tailored to your dates in ${districtName}, write to our concierge team and we'll match the right homes to your budget.`,
+        de: `Jede Villa wird nach Lage, Saison und Ausstattung individuell betrachtet, daher veröffentlichen wir hier keine pauschalen Preise. Für eine auf Ihre Termine in ${districtName} abgestimmte Spanne schreiben Sie unserem Concierge-Team — wir finden die passenden Häuser für Ihr Budget.`,
+        ru: `Каждая вилла оценивается индивидуально — по расположению, сезону и оснащению, поэтому общих цен мы здесь не публикуем. Чтобы узнать диапазон под ваши даты в районе ${districtName}, напишите нашей консьерж-команде — подберём подходящие дома под ваш бюджет.`,
       }),
     },
     {
@@ -165,16 +165,16 @@ export default async function DistrictPage({
     },
     {
       q: loc(locale, {
-        tr: `${districtName}'da rezervasyon nasıl yapılır?`,
-        en: `How do I book in ${districtName}?`,
-        de: `Wie buche ich in ${districtName}?`,
-        ru: `Как забронировать в районе ${districtName}?`,
+        tr: `${districtName}'da nasıl iletişime geçerim?`,
+        en: `How do I get in touch about ${districtName}?`,
+        de: `Wie nehme ich Kontakt zu ${districtName} auf?`,
+        ru: `Как связаться по поводу района ${districtName}?`,
       }),
       a: loc(locale, {
-        tr: `Beğendiğiniz villa veya apartı seçin ve rezervasyon formunu doldurun. Bir saat içinde WhatsApp veya telefondan dönüş yapıyoruz.`,
-        en: `Pick a villa or apartment you like and fill in the booking form. We respond within an hour via WhatsApp or phone.`,
-        de: `Wählen Sie eine Villa oder ein Apartment, das Ihnen gefällt, und füllen Sie das Buchungsformular aus. Wir antworten innerhalb einer Stunde per WhatsApp oder Telefon.`,
-        ru: `Выберите понравившуюся виллу или апартаменты и заполните форму бронирования. Мы ответим в течение часа по WhatsApp или телефону.`,
+        tr: `Beğendiğiniz villa ya da apartı bize iletin; konsiyerj ekibimiz tarihlerinize uygun seçenekleri WhatsApp veya telefondan paylaşır. Yazdığınızda size en geç 24 saat içinde dönüş yapıyoruz.`,
+        en: `Tell us the villa or apartment that caught your eye and our concierge will share options for your dates over WhatsApp or phone. We reply within 24 hours.`,
+        de: `Nennen Sie uns die Villa oder das Apartment, das Ihnen gefällt — unser Concierge teilt passende Optionen für Ihre Termine per WhatsApp oder Telefon. Wir antworten innerhalb von 24 Stunden.`,
+        ru: `Сообщите нам виллу или апартаменты, которые вам приглянулись, и консьерж предложит варианты на ваши даты по WhatsApp или телефону. Мы отвечаем в течение 24 часов.`,
       }),
     },
   ];

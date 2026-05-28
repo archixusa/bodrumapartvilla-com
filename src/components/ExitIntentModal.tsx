@@ -8,6 +8,21 @@ import { trackLead } from "@/lib/analytics";
 
 const STORAGE_KEY = "bav-exit-intent-dismissed";
 const TTL_MS = 30 * 24 * 60 * 60 * 1000;
+const LOCALES = ["tr", "en", "de", "ru"];
+
+// Only arm on high-intent browsing pages: homepage, the villa list, and
+// district pages. Keeps the invitation away from contact, legal and
+// inner detail pages where it would feel pushy for a quiet-luxury brand.
+function isEligiblePath(pathname: string): boolean {
+  // Strip a leading locale prefix (localePrefix is "as-needed", so the
+  // default locale "tr" has none while en/de/ru are prefixed).
+  const segments = pathname.split("/").filter(Boolean);
+  if (segments[0] && LOCALES.includes(segments[0])) segments.shift();
+  if (segments.length === 0) return true; // homepage
+  if (segments[0] === "villalar") return true; // villa list
+  if (segments[0] === "bodrum") return true; // district pages
+  return false;
+}
 
 interface Copy {
   title: string;
@@ -109,6 +124,8 @@ export function ExitIntentModal() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    // Only arm on eligible pages (homepage, /villalar, /bodrum/*).
+    if (!isEligiblePath(window.location.pathname)) return;
     // Per-session guard so the modal can't re-open on the same browsing session.
     try {
       if (window.sessionStorage.getItem(STORAGE_KEY) === "shown") return;
@@ -145,10 +162,10 @@ export function ExitIntentModal() {
       }
     };
 
-    // Mobile fallback: 60 seconds on small viewports.
+    // Mobile fallback: a gentle 90 seconds on small viewports.
     let mobileTimer: number | undefined;
     if (window.innerWidth < 768) {
-      mobileTimer = window.setTimeout(() => trigger(), 60_000);
+      mobileTimer = window.setTimeout(() => trigger(), 90_000);
     }
 
     document.addEventListener("mouseout", onMouseOut);

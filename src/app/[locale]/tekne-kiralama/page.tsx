@@ -59,10 +59,10 @@ export default async function Page({
         "Как забронировать лодку?",
       ),
       a: pick(
-        "Sağdaki formu doldurun veya WhatsApp'tan yazın. 1 saat içinde size müsaitlik ve net fiyat teklifi gönderiyoruz.",
-        "Fill in the form on the right or message us on WhatsApp. We send availability and a fixed quote within 1 hour.",
-        "Füllen Sie das Formular rechts aus oder schreiben Sie uns über WhatsApp. Innerhalb von einer Stunde erhalten Sie Verfügbarkeit und ein festes Angebot.",
-        "Заполните форму справа или напишите нам в WhatsApp. В течение часа мы пришлём наличие мест и фиксированную цену.",
+        "Sağdaki formu doldurun veya WhatsApp'tan yazın. En geç 24 saat içinde size müsaitlik ve net fiyat teklifi gönderiyoruz.",
+        "Fill in the form on the right or message us on WhatsApp. We send availability and a fixed quote within 24 hours.",
+        "Füllen Sie das Formular rechts aus oder schreiben Sie uns über WhatsApp. Innerhalb von 24 Stunden erhalten Sie Verfügbarkeit und ein festes Angebot.",
+        "Заполните форму справа или напишите нам в WhatsApp. В течение 24 часов мы пришлём наличие мест и фиксированную цену.",
       ),
     },
     {
