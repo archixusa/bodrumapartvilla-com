@@ -198,6 +198,11 @@ body::before {
   .section-blue {
     background: linear-gradient(180deg, transparent 0%, rgba(166, 192, 234, 0.22) 50%, transparent 100%);
   }
+  /* Deep navy section — light text is expected on top of it. */
+  .section-deep {
+    background: linear-gradient(160deg, #0A1B3A 0%, #122A5E 58%, #0A1B3A 100%);
+    color: #fff;
+  }
 
   /* Inputs */
   .input-base {
