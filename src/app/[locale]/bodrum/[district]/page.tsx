@@ -7,6 +7,7 @@ import { Link } from "@/i18n/routing";
 import { PropertyCard } from "@/components/PropertyCard";
 import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
+import { Testimonials } from "@/components/Testimonials";
 import { districts, getDistrict } from "@/data/districts";
 import { getPropertiesByDistrict } from "@/data/properties";
 import { loc, locArr } from "@/lib/i18n-data";
@@ -372,6 +373,17 @@ export default async function DistrictPage({
           )}
         </div>
       </section>
+
+      <Testimonials
+        district={d.name}
+        max={3}
+        title={loc(locale, {
+          tr: `${districtName}'da kalan misafirler`,
+          en: `Guests who stayed in ${districtName}`,
+          de: `Gäste, die in ${districtName} zu Gast waren`,
+          ru: `Гости, останавливавшиеся в районе ${districtName}`,
+        })}
+      />
 
       <section className="section">
         <div className="container-page max-w-4xl">
