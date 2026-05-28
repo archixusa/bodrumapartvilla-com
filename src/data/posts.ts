@@ -13,19 +13,31 @@ export interface Post {
   date: string;
   readingTime: number;
   hero: string;
-  category: { tr: string; en: string };
+  category: { tr: string; en: string; de?: string; ru?: string };
   titleTr: string;
   titleEn: string;
+  titleDe?: string;
+  titleRu?: string;
   excerptTr: string;
   excerptEn: string;
+  excerptDe?: string;
+  excerptRu?: string;
   metaTitleTr: string;
   metaTitleEn: string;
+  metaTitleDe?: string;
+  metaTitleRu?: string;
   metaDescTr: string;
   metaDescEn: string;
+  metaDescDe?: string;
+  metaDescRu?: string;
   contentTr: PostSection[];
   contentEn: PostSection[];
+  contentDe?: PostSection[];
+  contentRu?: PostSection[];
   faqTr: { q: string; a: string }[];
   faqEn: { q: string; a: string }[];
+  faqDe?: { q: string; a: string }[];
+  faqRu?: { q: string; a: string }[];
   relatedDistricts?: DistrictSlug[];
 }
 
@@ -35,7 +47,7 @@ export const posts: Post[] = [
     date: "2026-05-20",
     readingTime: 10,
     hero: "/blog/bodrum-villa-rehberi/hero.webp",
-    category: { tr: "Villa Rehberi", en: "Villa Guide" },
+    category: { tr: "Villa Rehberi", en: "Villa Guide", de: "Villa-Ratgeber", ru: "Гид по виллам" },
     titleTr: "Bodrum Villa Rehberi 2026: Hangi Bölge, Hangi Tip Villa Size Uygun?",
     titleEn: "Bodrum Villa Guide 2026: Which Area, Which Villa Type Suits You?",
     excerptTr:
@@ -185,13 +197,161 @@ export const posts: Post[] = [
       { q: "What's the minimum stay in a villa?", a: "5-7 nights in high season (June-September). 3 nights are accepted in low season. Weekend-only bookings are limited." },
       { q: "How do I arrange a private chef at the villa?", a: "Let us know when booking; chef service runs at 4,500-7,500 TL per day. You choose the menu, the chef shops for ingredients." },
     ],
+    titleDe: "Bodrum Villa-Ratgeber 2026: Welche Region, welcher Villentyp passt zu Ihnen?",
+    titleRu: "Путеводитель по виллам Бодрума 2026: какой район и тип виллы подойдёт именно вам?",
+    excerptDe:
+      "Das Mieten einer Villa in Bodrum hat sich in den letzten Jahren von der Alternative zum Hotel zur bevorzugten Urlaubsform gewandelt. Welche Region zu Ihnen passt, wie sich die Preise zusammensetzen und worin der Unterschied zwischen freistehend und Doppelhaushälfte liegt – ein kurzer Überblick.",
+    excerptRu:
+      "Аренда виллы в Бодруме за последние годы превратилась из альтернативы отелю в основной формат отдыха. Какой район вам подойдёт, как формируются цены, в чём разница между отдельно стоящей виллой и виллой-дуплексом — краткий обзор.",
+    metaTitleDe: "Bodrum Villa-Ratgeber 2026 | Welche Region, welcher Villentyp",
+    metaTitleRu: "Путеводитель по виллам Бодрума 2026 | Район и тип виллы",
+    metaDescDe:
+      "Villa in Bodrum mieten: Regionswahl, Preisspannen, freistehend vs. Doppelhaushälfte, Mindestaufenthalt und Tipps – ein vollständiger Ratgeber in zehn Minuten.",
+    metaDescRu:
+      "Аренда виллы в Бодруме: выбор района, ценовые диапазоны, отдельно стоящая вилла или дуплекс, правила минимального срока и советы — полный путеводитель за 10 минут.",
+    contentDe: [
+      {
+        type: "p",
+        text: "Die Villenmiete in Bodrum hat sich in den letzten fünf Jahren von einer Alternative zum Hotel zur bevorzugten Urlaubsform vieler Familien entwickelt. Der Grund ist einfach: Eine Familie mit vier bis sechs Personen oder zwei befreundete Paare, die im Hotel jede Nacht drei oder vier Zimmer bezahlen, können beim gleichen Budget eine freistehende Villa mit eigenem Pool und eigenem Rhythmus mieten. Dieser Ratgeber ist ein praktischer Ausgangspunkt für alle, die zum ersten Mal eine Villa mieten – von der Regionswahl über das Preisverständnis bis zu den kleinen Details, auf die es ankommt.",
+      },
+      { type: "h2", id: "hangi-bolge", text: "In welcher Region mietet man eine Villa?" },
+      {
+        type: "p",
+        text: "Der Villenbestand auf der Halbinsel Bodrum ist nicht gleichmäßig verteilt. Yalıkavak, Türkbükü, Gündoğan, das Hinterland von Bitez, Akyarlar und der Ortskern von Ortakent gelten als die eigentlichen „Villenlagen“. Die Zentren von Gümbet und Turgutreis sind dagegen stärker von Apartments geprägt; wer hier eine Villa sucht, muss in die Hanglagen oder in den Ortskern ausweichen.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Yalıkavak – Gehobene Hangvillen mit Infinity-Pool und Meerblick. Für Flitterwochen und Firmengruppen.",
+          "Turgutreis Akyarlar – Freistehende Familienvillen mit Sonnenuntergangsblick. Budgetfreundlicher.",
+          "Ortskern Ortakent – Traditionelle Steinvillen mit Garten zwischen Mandarinen- und Olivenbäumen.",
+          "Gündoğan – Ruhig, windgeschützt, am Hang mit Meerblick.",
+          "Hinterland Bitez – Villen mit Garten, strandnah, praktisch für Familien mit Kindern.",
+          "Torba – Flughafennah, flaches Wasser, freistehend hinter der Resortzeile.",
+        ],
+      },
+      { type: "h2", id: "fiyat", text: "Wie werden die Preise festgelegt?" },
+      {
+        type: "p",
+        text: "Den Übernachtungspreis einer Villa bestimmen vier Faktoren: die Region (Yalıkavak liegt 30–50 % über Turgutreis), die Kapazität (Zimmeranzahl), das Vorhandensein eines privaten Pools (eine Villa mit Pool liegt 40–60 % über einer ohne) und die Saison (Juli–August ist Hochpunkt). Für die Hochsaison 2026 bewegen Sie sich etwa in folgenden Spannen:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Freistehende Villa mit 4 Schlafzimmern und Pool, mittleres Segment: 10.000–14.000 TL/Nacht",
+          "Luxusvilla mit 5 Schlafzimmern und Infinity-Pool (Yalıkavak): 18.000–22.000 TL/Nacht",
+          "Steinvilla mit 5 Schlafzimmern und Garten im Ortskern (Ortakent): 12.000–15.000 TL/Nacht",
+          "Nebensaison (Mai, Oktober): etwa 50–60 % des Hochsaisonpreises",
+        ],
+      },
+      { type: "h2", id: "mustakil-yari", text: "Freistehend oder Doppelhaushälfte?" },
+      {
+        type: "p",
+        text: "In Villenanzeigen begegnen Ihnen häufig zwei Typen: freistehend und als Doppelhaushälfte. Eine freistehende Villa liegt im eigenen Garten, hat einen eigenen Eingang und teilt keine Wand mit dem Nachbarn – sie ist im wahrsten Sinne eine eigene Insel und lässt bei Abendessen, Musik und Kinderlärm jede Freiheit. Eine Doppelhaushälfte teilt eine Wand mit dem Nachbarn; meist sind zwei Villen nebeneinander geplant. Die Variante als Doppelhaushälfte kann 20–30 % günstiger sein; nach der Schalldämmung sollten Sie jedoch vor der Buchung fragen.",
+      },
+      { type: "h2", id: "minimum-kalis", text: "Mindestaufenthalt" },
+      {
+        type: "p",
+        text: "In der Hochsaison (Juni–September) gilt bei Villen meist ein Mindestaufenthalt von 5–7 Nächten. Der Grund: Die Reinigungs- und Wartungskosten für eine einzelne leer stehende Nacht machen kurze Aufenthalte unwirtschaftlich. In der Nebensaison sind auch drei Nächte möglich. Wer ein Wochenende (Fr.–So.) sucht, zahlt unter Umständen mehr als bei einer Buchung unter der Woche.",
+      },
+      { type: "h2", id: "ipuclari", text: "Praktische Tipps" },
+      {
+        type: "ol",
+        items: [
+          "Fragen Sie nach der Poolgröße: Manche Anzeigen schreiben „mit Pool“, doch die Maße entsprechen einem Whirlpool (3x4). Echte Schwimmbecken beginnen über 8x4 Metern.",
+          "Erkundigen Sie sich nach der Anzahl der Klimaanlagen: Ist nicht in jedem Zimmer eine vorhanden, finden Sie nachts womöglich keinen Schlaf.",
+          "Fragen Sie nach der Küchenausstattung: Backofen, Geschirrspüler, Mixer und Kaffeemaschine senken Ihre Kosten für Mahlzeiten zu Hause.",
+          "Garten oder Terrasse? Im Garten sind die Abendessen angenehmer, auf der Terrasse ist der Ausblick schöner.",
+          "Lokales Team oder Vermittler? Eine Vereinbarung mit einem lokalen Team verdoppelt die Servicequalität.",
+          "Babybett, Hochstuhl, Spielzeug – reisen Sie mit kleinen Kindern, fordern Sie diese vorab an.",
+        ],
+      },
+      { type: "h2", id: "ozet", text: "Zusammenfassung" },
+      {
+        type: "p",
+        text: "Eine Villa in Bodrum verbindet, mit der richtigen Region und dem richtigen Team, den Komfort eines Hotels und die Wärme eines privaten Zuhauses in einer einzigen Reise. Haben Sie die passende Villa für Ihr Budget und Ihre Gruppe gewählt, lassen sich Extras – Privatkoch, Massage, Bootsausflug – bequem unter demselben Dach hinzufügen. Bedenken Sie bei der Terminreservierung, dass Hochsaisonvillen oft schon im April ausgebucht sind; bestätigen Sie die Verfügbarkeit, bevor Sie Ihre Planung abschließen.",
+      },
+    ],
+    contentRu: [
+      {
+        type: "p",
+        text: "За последние пять лет аренда виллы в Бодруме превратилась из альтернативы отелю в основной формат отдыха для многих семей. Причина проста: семья из четырёх–шести человек или две близкие пары, которые в отеле платят за три-четыре номера в сутки, при том же бюджете могут снять отдельно стоящую виллу с собственным бассейном и жить в своём ритме. Этот путеводитель станет практической отправной точкой для тех, кто арендует виллу впервые, — от выбора района и понимания цен до мелких деталей, на которые стоит обратить внимание.",
+      },
+      { type: "h2", id: "hangi-bolge", text: "В каком районе арендовать виллу?" },
+      {
+        type: "p",
+        text: "Фонд вилл на полуострове Бодрум распределён неравномерно. Yalıkavak, Türkbükü, Gündoğan, внутренняя часть Bitez, Akyarlar и центр посёлка Ortakent можно по праву назвать настоящими «виллными зонами». Центры Gümbet и Turgutreis, напротив, застроены преимущественно апартаментами; тем, кто ищет здесь виллу, приходится подниматься на склоны или уходить вглубь посёлка.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Yalıkavak — изысканные виллы на склоне с инфинити-бассейном и видом на море. Для медового месяца и корпоративных групп.",
+          "Turgutreis Akyarlar — отдельно стоящие семейные виллы с видом на закат. Более гибкие по бюджету.",
+          "Центр Ortakent — традиционные каменные виллы с садом среди мандариновых и оливковых деревьев.",
+          "Gündoğan — тихие, защищённые от ветра виллы на склоне с видом на море.",
+          "Внутренняя часть Bitez — виллы с садом близко к пляжу, удобные для семей с детьми.",
+          "Torba — близко к аэропорту, мелкое море, отдельно стоящие виллы за линией резортов.",
+        ],
+      },
+      { type: "h2", id: "fiyat", text: "Как формируются цены?" },
+      {
+        type: "p",
+        text: "Стоимость виллы за ночь определяют четыре фактора: район (Yalıkavak на 30–50 % дороже Turgutreis), вместимость (количество спален), наличие частного бассейна (вилла с бассейном на 40–60 % дороже виллы без него) и сезон (пик приходится на июль–август). На высокий сезон 2026 года ориентировочные диапазоны таковы:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Отдельно стоящая вилла с 4 спальнями и бассейном, средний сегмент: 10 000–14 000 TL/ночь",
+          "Роскошная вилла с 5 спальнями и инфинити-бассейном (Yalıkavak): 18 000–22 000 TL/ночь",
+          "Каменная вилла с 5 спальнями и садом в центре посёлка (Ortakent): 12 000–15 000 TL/ночь",
+          "Низкий сезон (май, октябрь): около 50–60 % от цены высокого сезона",
+        ],
+      },
+      { type: "h2", id: "mustakil-yari", text: "Отдельно стоящая вилла или дуплекс?" },
+      {
+        type: "p",
+        text: "В объявлениях о виллах чаще всего встречаются два типа: отдельно стоящая вилла и вилла-дуплекс. Отдельно стоящая вилла расположена в собственном саду, имеет отдельный вход и не делит ни одной стены с соседом — это по-настоящему «собственный остров», который даёт свободу в отношении ужинов, музыки и детского шума. Вилла-дуплекс делит одну стену с соседом; обычно две виллы спланированы рядом. Вариант дуплекса может быть на 20–30 % выгоднее по бюджету; однако о звукоизоляции стоит спросить до бронирования.",
+      },
+      { type: "h2", id: "minimum-kalis", text: "Минимальный срок проживания" },
+      {
+        type: "p",
+        text: "В высокий сезон (июнь–сентябрь) для вилл обычно действует минимальный срок проживания 5–7 ночей. Причина проста: расходы на уборку и обслуживание при одной незанятой ночи делают короткое проживание невыгодным. В низкий сезон возможны и три ночи. Если вы ищете вариант на выходные (пт–вс), он может обойтись дороже, чем бронирование в будние дни.",
+      },
+      { type: "h2", id: "ipuclari", text: "Практические советы" },
+      {
+        type: "ol",
+        items: [
+          "Уточните размер бассейна: в некоторых объявлениях указано «с бассейном», но по размерам это джакузи (3x4). Настоящие плавательные бассейны начинаются от 8x4 метров.",
+          "Узнайте число кондиционеров: если они есть не во всех комнатах, ночью вы можете не уснуть.",
+          "Спросите об оснащении кухни: духовка, посудомоечная машина, миксер и кофемашина снижают ваши расходы на домашнюю еду.",
+          "Сад или терраса? В саду ужины приятнее, на террасе вид красивее.",
+          "Местная команда или посредник? Договорённость с местной командой удваивает качество обслуживания.",
+          "Детская кроватка, стульчик, игрушки — если вы едете с маленькими детьми, запросите их заранее.",
+        ],
+      },
+      { type: "h2", id: "ozet", text: "Итог" },
+      {
+        type: "p",
+        text: "Аренда виллы в Бодруме при правильном выборе района и команды соединяет в одной поездке удобство отеля и теплоту собственного дома. Выбрав виллу, подходящую вашему бюджету и группе, вы легко добавите дополнительные услуги — личного повара, массаж, морскую прогулку — под той же крышей. Бронируя даты, помните, что виллы высокого сезона нередко заполняются уже в апреле; подтвердите доступность, прежде чем завершить планирование.",
+      },
+    ],
+    faqDe: [
+      { q: "Wo befinden sich Bodrums gehobenste Villen?", a: "Am Hang von Yalıkavak, in Richtung Tilkicik und Sandıma, bilden Villen mit Infinity-Pool und Meerblick das Zentrum des gehobenen Segments. Villen mit 5 Schlafzimmern in dieser Lage liegen bei 18.000–22.000 TL pro Nacht." },
+      { q: "Wie viele Nächte muss ich mindestens in einer Villa bleiben?", a: "In der Hochsaison (Juni–September) meist 5–7 Nächte. In der Nebensaison werden 3 Nächte akzeptiert. Reine Wochenendbuchungen sind begrenzt." },
+      { q: "Wie kann ich einen Privatkoch für die Villa organisieren?", a: "Teilen Sie es uns bei der Buchung mit; der Kochservice für die Villa liegt bei 4.500–7.500 TL pro Tag. Sie wählen das Menü, der Koch besorgt die Zutaten." },
+    ],
+    faqRu: [
+      { q: "В каком районе находятся самые роскошные виллы Бодрума?", a: "На склоне Yalıkavak, в сторону Tilkicik и Sandıma, центром премиального сегмента служат виллы с инфинити-бассейном и видом на море. Виллы с 5 спальнями в этом районе стоят 18 000–22 000 TL за ночь." },
+      { q: "Сколько ночей минимально нужно проживать на вилле?", a: "В высокий сезон (июнь–сентябрь) обычно 5–7 ночей. В низкий сезон допускаются 3 ночи. Бронирования только на выходные ограничены." },
+      { q: "Как организовать личного повара на вилле?", a: "Сообщите нам при бронировании; услуга повара на вилле составляет 4 500–7 500 TL в день. Меню выбираете вы, продукты закупает повар." },
+    ],
   },
   {
     slug: "bodrum-tatil-rehberi-2026",
     date: "2026-05-18",
     readingTime: 9,
     hero: "/blog/bodrum-tatil-rehberi-2026/hero.webp",
-    category: { tr: "Rehber", en: "Guide" },
+    category: { tr: "Rehber", en: "Guide", de: "Ratgeber", ru: "Путеводитель" },
     titleTr: "Bodrum Tatil Rehberi 2026: Villa mı, Apart mı Daha Hesaplı?",
     titleEn: "Bodrum Travel Guide 2026: Villa or Apartment — Which Is Better Value?",
     excerptTr:
@@ -325,13 +485,145 @@ export const posts: Post[] = [
       { q: "When is the best month to visit Bodrum?", a: "Late May to early June, and September, give the best weather-and-price overlap. July-August is the peak — water temperature is highest, but so are crowds and prices." },
       { q: "How is the airport transfer arranged?", a: "Request it when booking; we set up a VIP transfer from Milas-Bodrum Airport to the villa/apartment door. Pricing runs 2,500-5,500 TL depending on the area." },
     ],
+    titleDe: "Bodrum Reiseführer 2026: Villa oder Apartment – was ist günstiger?",
+    titleRu: "Путеводитель по отдыху в Бодруме 2026: что выгоднее — вилла или апартаменты?",
+    excerptDe:
+      "Sollte eine sechsköpfige Gruppe bei gleichem Budget in Bodrum eine Villa oder ein Apartment mieten? Ein vollständiger Vergleich von Reisezeitraum, Transfer, Verpflegung und versteckten Kosten.",
+    excerptRu:
+      "Что выбрать группе из шести человек при одинаковом бюджете — виллу или апартаменты в Бодруме? Полное сравнение с учётом дат, трансфера, питания и скрытых расходов.",
+    metaTitleDe: "Bodrum Reiseführer 2026 | Villa oder Apartment, Budgetvergleich",
+    metaTitleRu: "Путеводитель по отдыху в Бодруме 2026 | Вилла или апартаменты, сравнение бюджета",
+    metaDescDe:
+      "Urlaub in Bodrum mit sechs Personen: Villa oder Apartment – was ist günstiger? Vergleich von Budget, Reisezeitraum, Transfer und Service im vollständigen Ratgeber.",
+    metaDescRu:
+      "Отдых в Бодруме для шести человек: вилла или апартаменты — что выгоднее? Сравнение бюджета, дат, трансфера и сервиса в полном путеводителе.",
+    contentDe: [
+      {
+        type: "p",
+        text: "Bei der Planung eines Urlaubs in Bodrum lautet die erste Frage oft nicht „Wohin?“, sondern „Wie?“ – Villa, Apartment oder Hotel? Diesen Ratgeber haben wir erstellt, um für eine sechsköpfige Familie oder zwei Paare bei gleichem Reisezeitraum und gleichem Budget die realistischsten Zahlen gegenüberzustellen. Das Ergebnis mag Sie nicht überraschen, die Details aber schon.",
+      },
+      { type: "h2", id: "tarih", text: "Der beste Reisezeitraum" },
+      {
+        type: "p",
+        text: "Die Saison in Bodrum reicht von Mitte Mai bis Mitte Oktober, doch jeder Monat hat seinen eigenen Charakter. Mai und Oktober gelten als „Nebensaison“: 25–28 °C in der Luft, das Meer noch mit 22–23 °C zum Baden geeignet, die Preise etwa halb so hoch wie in der Hochsaison. Juni und September bieten die Ruhe „vor dem Höhepunkt“; Juli und August sind die Zeit, in der sowohl Temperatur als auch Preise ihren Höchststand erreichen. Für Flitterwochen sind die ersten drei Septemberwochen besonders beliebt.",
+      },
+      { type: "h2", id: "villa-vs-apart", text: "Villa oder Apartment? Ein Vergleich" },
+      {
+        type: "p",
+        text: "Sprechen wir über eine sechsköpfige Gruppe – zwei erwachsene Paare und zwei Kinder. Gleicher Zeitraum (etwa 1.–8. August 2026), gleiche Region (Yalıkavak), gleiche Dauer (7 Nächte). Zwei Optionen:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Option A – Zwei Apartments mit je 2 Schlafzimmern (eines pro Familie): insgesamt ~6.500 TL/Nacht × 7 = 45.500 TL",
+          "Option B – Eine freistehende Villa mit 4 Schlafzimmern und privatem Pool: ~13.500 TL/Nacht × 7 = 94.500 TL",
+        ],
+      },
+      {
+        type: "p",
+        text: "Auf den ersten Blick ist das Apartment etwa halb so teuer. Die tatsächliche Rechnung sieht jedoch anders aus: In der Villa finden die Abendessen an einer Kochtafel für acht Personen statt, die Restaurantkosten sinken um 40–50 %; dank des privaten Pools ist ein täglicher Bootsausflug nicht zwingend; die Kinder spielen in einem privaten Garten fern der Erwachsenenaufsicht. Bei der Apartment-Variante können Restaurant und Unterhaltung pro Woche 25.000–35.000 TL zusätzlich kosten; in der Villa sinkt dieser Betrag auf 10.000–15.000 TL. Der „reale Budgetunterschied“ über 7 Nächte schrumpft so auf etwa 30.000 TL – die Villa bleibt teurer, doch für 35 % Mehrausgaben erhalten Sie ein deutlich gehobeneres Erlebnis.",
+      },
+      { type: "h2", id: "ulasim", text: "Anreise: Flughafen und Fahrzeug" },
+      {
+        type: "p",
+        text: "Der Flughafen Milas-Bodrum liegt im Osten der Halbinsel; 50 km nach Yalıkavak, 35 km ins Zentrum. Am praktischsten ist ein vorab vereinbarter VIP-Transfer; der Flug wird verfolgt, bei Verspätungen fallen keine Zusatzkosten an. Wenn Sie mobil sein möchten, kostet ein Kompaktwagen für 7 Tage 14.000–18.000 TL. Bei einer Villa ist ein Fahrzeug meist unverzichtbar (zur Villa am Hang fährt kein Sammeltaxi); Apartmentgäste erreichen die meisten Orte mit dem Sammeltaxi oder zu Fuß.",
+      },
+      { type: "h2", id: "yemek", text: "Verpflegung: zu Hause kochen und auswärts essen" },
+      {
+        type: "p",
+        text: "Das Verpflegungsbudget in Bodrum teilt sich in zwei Lager – wer einkauft und zu Hause kocht, gibt 4.000–6.000 TL pro Woche aus; wer jede Mahlzeit auswärts isst, kommt in derselben Woche auf 25.000–35.000 TL. Die Villa mit ihrer großen Küche und dem Essbereich im Freien setzt auf die Seite des „Selbstkochens“. Für das Apartment ist der praktische Plan: Frühstück zu Hause, Abendessen auswärts. Fragen Sie das lokale Team nach Restaurantempfehlungen; in Touristenfallen zu geraten ist hier sehr leicht.",
+      },
+      { type: "h2", id: "yapilacaklar", text: "To-do-Liste für eine Woche" },
+      {
+        type: "ol",
+        items: [
+          "Einen Tag Blaue Reise (Karaada, Aquarium-Bucht).",
+          "Spaziergang bei Sonnenuntergang in der Yalıkavak Marina und ein Abendessen vom Privatkoch.",
+          "Ein Tagesausflug nach Datça (2 Stunden mit dem Auto).",
+          "Ein Tag, an dem Sie Pool oder Strand nicht verlassen.",
+          "Besuch eines lokalen Marktes (samstags in Turgutreis, dienstags in Ortakent).",
+          "Burg von Bodrum und Museum für Unterwasserarchäologie.",
+          "Für einen der Abende ein lokales Restaurant im Voraus reservieren.",
+        ],
+      },
+      { type: "h2", id: "sonuc", text: "Fazit" },
+      {
+        type: "p",
+        text: "Für eine sechsköpfige Gruppe ist eine Villa in Bodrum 30–40 % teurer als die Apartment-Variante, doch das Erlebnis liegt mit deutlichem Abstand höher. Für ein Paar oder eine kleine Familie ist das Apartment die praktischste Wahl; für eine Großfamilie oder zwei Paare ist die Villa fast immer sinnvoller. Wenn Sie unentschlossen sind, teilen Sie uns Ihren Zeitraum und Ihre Gruppengröße mit; wir erstellen Ihnen einen konkreten Vergleich.",
+      },
+    ],
+    contentRu: [
+      {
+        type: "p",
+        text: "При планировании отдыха в Бодруме первый вопрос нередко звучит не «куда?», а «как?» — вилла, апартаменты или отель? Этот путеводитель мы подготовили, чтобы для семьи из шести человек или двух пар сопоставить наиболее реалистичные цифры при одинаковых датах и одинаковом бюджете. Результат может вас не удивить, а вот детали — вполне.",
+      },
+      { type: "h2", id: "tarih", text: "Лучшие даты" },
+      {
+        type: "p",
+        text: "Сезон в Бодруме длится с середины мая до середины октября, но у каждого месяца свой характер. Май и октябрь считаются «низким сезоном»: воздух 25–28 градусов, море ещё пригодно для купания при 22–23 градусах, а цены примерно вдвое ниже, чем в высокий сезон. Июнь и сентябрь дают спокойствие «перед пиком»; июль–август — период, когда и температура, и цены достигают максимума. Для медового месяца особенно любимы первые три недели сентября.",
+      },
+      { type: "h2", id: "villa-vs-apart", text: "Вилла или апартаменты? Сравнение" },
+      {
+        type: "p",
+        text: "Возьмём группу из шести человек — две взрослые пары и двое детей. Одни и те же даты (например, 1–8 августа 2026), один район (Yalıkavak), одна продолжительность (7 ночей). Два варианта:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Вариант A — двое апартаментов с 2 спальнями каждый (по одному на семью): всего ~6 500 TL/ночь × 7 = 45 500 TL",
+          "Вариант B — одна отдельно стоящая вилла с 4 спальнями и частным бассейном: ~13 500 TL/ночь × 7 = 94 500 TL",
+        ],
+      },
+      {
+        type: "p",
+        text: "На первый взгляд апартаменты примерно вдвое дешевле. Но реальный расчёт иной: на вилле ужины проходят за столом на восемь персон с поваром, расходы на рестораны снижаются на 40–50 %; благодаря частному бассейну ежедневная морская прогулка не обязательна; дети играют в собственном саду вдали от посторонних. В варианте с апартаментами рестораны и развлечения могут добавлять 25 000–35 000 TL в неделю; на вилле эта сумма снижается до 10 000–15 000 TL. Поэтому «реальная разница в бюджете» за 7 ночей сокращается примерно до 30 000 TL — вилла всё ещё дороже, но за дополнительные 35 % вы получаете опыт заметно более высокого уровня.",
+      },
+      { type: "h2", id: "ulasim", text: "Трансфер: аэропорт и автомобиль" },
+      {
+        type: "p",
+        text: "Аэропорт Milas-Bodrum расположен на востоке полуострова; 50 км до Yalıkavak и 35 км до центра. Самый удобный вариант — заранее заказанный VIP-трансфер; рейс отслеживается, при задержках дополнительная плата не взимается. Если вы хотите быть мобильными, аренда компактного автомобиля на 7 дней обойдётся в 14 000–18 000 TL. На вилле автомобиль чаще всего необходим (к вилле на склоне маршрутка не доезжает); гости апартаментов до большинства мест добираются на маршрутке или пешком.",
+      },
+      { type: "h2", id: "yemek", text: "План питания: домашняя еда и рестораны" },
+      {
+        type: "p",
+        text: "Бюджет на питание в Бодруме делится надвое — те, кто заходит в магазин и готовит дома, тратят 4 000–6 000 TL в неделю; те, кто питается в ресторанах каждый раз, за ту же неделю выходят на 25 000–35 000 TL. Вилла с просторной кухней и зоной для трапез на открытом воздухе делает ставку на «домашнюю еду». Для апартаментов практичный план таков: завтрак дома, ужин в ресторане. За рекомендациями по ресторанам обращайтесь к местной команде; попасть в туристическую ловушку здесь очень легко.",
+      },
+      { type: "h2", id: "yapilacaklar", text: "Список дел на неделю" },
+      {
+        type: "ol",
+        items: [
+          "Один день — морская прогулка (Karaada, бухта Akvaryum).",
+          "Прогулка на закате в марине Yalıkavak и ужин с поваром.",
+          "Однодневная поездка в Datça (2 часа на машине).",
+          "День, когда вы не покидаете бассейн или пляж.",
+          "Посещение местного рынка (по субботам в Turgutreis, по вторникам в Ortakent).",
+          "Замок Бодрума и Музей подводной археологии.",
+          "На один из вечеров заранее забронировать столик в местном ресторане.",
+        ],
+      },
+      { type: "h2", id: "sonuc", text: "Вывод" },
+      {
+        type: "p",
+        text: "Для группы из шести человек вилла в Бодруме на 30–40 % дороже варианта с апартаментами, но опыт несравнимо выше. Для пары или небольшой семьи апартаменты — самый практичный выбор; для большой семьи или двух пар вилла почти всегда оправданнее. Если вы не можете определиться, сообщите нам свои даты и размер группы; мы подготовим для вас конкретное сравнение.",
+      },
+    ],
+    faqDe: [
+      { q: "Was ist für eine sechsköpfige Gruppe günstiger – Villa oder Apartment?", a: "Allein bei den Unterkunftskosten sind zwei Apartments 40–50 % günstiger als eine Villa. Rechnet man jedoch versteckte Kosten wie Verpflegung, Pool und private Fläche hinzu, schrumpft der Unterschied zur Villa auf 30–40 %. Für eine Großfamilie ist die Villa sinnvoller, für eine kleine Familie das Apartment." },
+      { q: "In welchem Monat reist man am besten nach Bodrum?", a: "Ende Mai bis Anfang Juni und der September bieten die beste Kombination aus Wetter und Preis. Juli und August sind Hochsaison; die Wassertemperatur ist am höchsten, ebenso wie der Andrang und die Preise." },
+      { q: "Wie wird der Flughafentransfer organisiert?", a: "Fordern Sie ihn bei der Buchung an; wir richten einen VIP-Transfer vom Flughafen Milas-Bodrum bis zur Tür der Villa oder des Apartments ein. Der Preis liegt je nach Region bei 2.500–5.500 TL." },
+    ],
+    faqRu: [
+      { q: "Что выгоднее для группы из шести человек — вилла или апартаменты?", a: "Только по стоимости проживания двое апартаментов на 40–50 % дешевле виллы. Но если добавить скрытые расходы — питание, бассейн, личное пространство, — разница с виллой сокращается до 30–40 %. Для большой семьи разумнее вилла, для небольшой — апартаменты." },
+      { q: "В каком месяце лучше всего ехать в Бодрум?", a: "Конец мая — начало июня и сентябрь дают лучшее сочетание погоды и цены. Июль–август — пик: температура воды максимальна, но и людей, и цен это тоже касается." },
+      { q: "Как организуется трансфер из аэропорта?", a: "Запросите его при бронировании; мы организуем VIP-трансфер от аэропорта Milas-Bodrum до двери виллы или апартаментов. Цена в зависимости от района составляет 2 500–5 500 TL." },
+    ],
   },
   {
     slug: "bodrum-ozel-havuzlu-villalar",
     date: "2026-05-15",
     readingTime: 8,
     hero: "/blog/bodrum-ozel-havuzlu-villalar/hero.webp",
-    category: { tr: "Villa", en: "Villa" },
+    category: { tr: "Villa", en: "Villa", de: "Villa", ru: "Вилла" },
     titleTr: "Bodrum Özel Havuzlu Villalar: Hangi Bölgede, Hangi Tip Havuz?",
     titleEn: "Bodrum Private-Pool Villas: Which Area, Which Type of Pool?",
     excerptTr:
@@ -476,6 +768,162 @@ export const posts: Post[] = [
       { q: "What's the difference between an infinity and a rectangular pool?", a: "Infinity is more striking visually; one edge is designed open toward the view. Rectangular is more practical for swimming and works for families with children. Maintenance is 20-30% higher for infinity, which is reflected in pricing." },
       { q: "Do Bodrum villas have pool heating?", a: "Most luxury villas do. Heating lifts the pool temperature by 5-10°C in May and October. We can include heating cost in your booking on request." },
       { q: "How is the pool cleaned before booking?", a: "Professional teams drain the pool and clean the filter the day before arrival; chlorine and pH are checked daily. You can ask for the cleaning schedule during booking." },
+    ],
+    titleDe: "Bodrum Villen mit privatem Pool: Welche Region, welcher Pooltyp?",
+    titleRu: "Виллы Бодрума с частным бассейном: какой район и какой тип бассейна?",
+    excerptDe:
+      "Die Villa mit privatem Pool ist in Bodrum längst eine selbstverständliche Urlaubsform. Die Unterschiede zwischen Infinity-, klassischem Rechteck- und Biopool – und welcher Typ in welcher Region zu finden ist – in einem kurzen Überblick.",
+    excerptRu:
+      "Вилла с частным бассейном в Бодруме давно стала привычным форматом отдыха. Различия между инфинити-, классическим прямоугольным и биобассейном, и в каком районе встречается тот или иной тип, — краткий обзор.",
+    metaTitleDe: "Bodrum Villen mit privatem Pool 2026 | Region, Typ, Preis",
+    metaTitleRu: "Виллы Бодрума с частным бассейном 2026 | Район, тип, цена",
+    metaDescDe:
+      "Villa mit privatem Pool in Bodrum mieten: Region, Pooltyp, Beheizung und Reinigungsstandards – eine Zusammenfassung in acht Minuten.",
+    metaDescRu:
+      "Аренда виллы с частным бассейном в Бодруме: район, тип бассейна, подогрев и стандарты уборки — краткое резюме за 8 минут.",
+    contentDe: [
+      {
+        type: "p",
+        text: "Die Villa mit privatem Pool hat sich auf der Halbinsel Bodrum seit 2015 von einem „Luxuszusatz“ zu einer nahezu selbstverständlichen Urlaubsform entwickelt. Besonders in Yalıkavak, Türkbükü, dem Hinterland von Bitez und dem Ortskern von Ortakent steht der private Pool ganz oben auf der Wunschliste. Dieser Beitrag fasst kurz die Unterschiede zwischen den Pooltypen, die Standards für Beheizung und Pflege sowie die Frage zusammen, welcher Pooltyp in welcher Region vorherrscht.",
+      },
+      { type: "h2", id: "tipler", text: "Pooltypen: Infinity, Rechteck, Bio" },
+      {
+        type: "p",
+        text: "In Villen in Bodrum begegnen uns drei Haupttypen von Pools.",
+      },
+      {
+        type: "h3",
+        text: "Infinity-Pool",
+      },
+      {
+        type: "p",
+        text: "Ein optisch wirkungsvoller Pool, dessen eine Kante zum Meer oder zur Aussicht zeigt und über den das Wasser scheinbar hinabgleitet. In Villen am Hang – besonders in Yalıkavak in Richtung Tilkicik und Sandıma – ist er der häufigste Typ. Optisch ist er beeindruckend; der Effekt „Pool und Meer verschmelzen“ auf Fotos ist das Markenzeichen des Infinity-Pools. Die Pflegekosten liegen 20–30 % über denen klassischer Pools, was sich im Übernachtungspreis niederschlägt.",
+      },
+      {
+        type: "h3",
+        text: "Klassischer Rechteckpool",
+      },
+      {
+        type: "p",
+        text: "Der Typ, den wir in 70 % der Villen in Bodrum sehen. Meist 8–12 Meter lang und 4–5 Meter breit. Der praktischste Typ zum Schwimmen; für Familien mit Kindern lässt sich ein flacher Bereich ergänzen. Es gibt die Wahl zwischen Chlor- oder Salzwasser; Salzwasser ist sanfter zur Haut.",
+      },
+      {
+        type: "h3",
+        text: "Biopool (Naturpool)",
+      },
+      {
+        type: "p",
+        text: "Ein Pool, der statt mit Chemikalien mit natürlichen Pflanzen und Filtersystemen gereinigt wird. In Bodrum ist er selten, doch einige Boutique-Villen im Hinterland von Bitez bieten diese Option. Er wirkt natürlicher; die Schwimmfläche ist jedoch meist kleiner.",
+      },
+      { type: "h2", id: "isitma", text: "Poolbeheizung – notwendig?" },
+      {
+        type: "p",
+        text: "Auch wenn das Meer im Mai und Oktober warm ist, kann das Poolwasser in schattigen Villen bei etwa 18–20 °C liegen; ohne Heizsystem ist das Schwimmen schwierig. Die große Mehrheit der gehobenen Villen verfügt über eine Poolheizung; ein Nachfragen vor der Buchung ist ratsam. Die Heizung sorgt in der Regel für einen Anstieg von 5–10 °C und kann pro Woche 800–1.500 TL Zusatzkosten verursachen.",
+      },
+      { type: "h2", id: "bolgeler", text: "Poolkarte nach Region" },
+      {
+        type: "ul",
+        items: [
+          "Yalıkavak Tilkicik / Sandıma – Hangvillen mit Infinity-Pool.",
+          "Turgutreis Akyarlar – Nach Westen ausgerichtete Rechteckpools für den Sonnenuntergang.",
+          "Ortskern Ortakent – Klassische Rechteckpools in Steingärten.",
+          "Hinterland Bitez – Klassische Pools mit Garten; selten Boutiquen mit Biopool.",
+          "Hänge von Gündoğan – Windgeschützte Rechteckpools.",
+          "Torba – Klassische Familienpools hinter der Resortzeile, mit flachem Bereich.",
+        ],
+      },
+      { type: "h2", id: "temizlik", text: "Pflege- und Reinigungsstandards" },
+      {
+        type: "p",
+        text: "In professionell geführten Villen wird die Wasserchemie des Pools mindestens zweimal pro Woche kontrolliert; Chlor- und pH-Wert werden täglich überwacht. Am Tag vor der Anreise der Gäste wird der Pool abgelassen und der Filter gereinigt. Wird bei der Buchung kein „Poolreinigungsplan“ mitgeteilt, fragen Sie unbedingt danach. In einer gut geführten Villa ist das Poolwasser völlig klar, ohne sichtbare Flecken am Boden.",
+      },
+      { type: "h2", id: "guvenlik", text: "Kindersicherheit" },
+      {
+        type: "p",
+        text: "Wenn Sie mit kleinen Kindern in einer Villa mit privatem Pool wohnen: Fordern Sie ein Alarmsystem am Poolrand, einen flachen Bereich, einen rutschfesten Boden, einen Rettungsring und möglichst eine Poolabdeckung an. Lassen Sie ein Kind niemals ohne Aufsicht eines Erwachsenen an den Pool; eine „verantwortliche Aufsichtsperson“ für den Pool zu bestimmen, ist die sicherste Praxis.",
+      },
+      { type: "h2", id: "sonuc", text: "Zusammenfassung" },
+      {
+        type: "p",
+        text: "Achten Sie bei der Wahl einer Villa mit privatem Pool in Bodrum nicht nur auf den Vermerk „mit Pool“; fragen Sie nach Pooltyp, Größe, Beheizung und Reinigungsplan. In der richtigen Villa wird eine Woche am Pool zur stärksten Erinnerung der Reise. Alle Villen auf unserer Plattform sind nach diesen Standards ausgewählt; bei offenen Fragen können Sie uns jederzeit über WhatsApp kontaktieren.",
+      },
+    ],
+    contentRu: [
+      {
+        type: "p",
+        text: "После 2015 года вилла с частным бассейном на полуострове Бодрум перестала быть «премиальным дополнением» и стала почти стандартным форматом отдыха. Особенно в Yalıkavak, Türkbükü, во внутренней части Bitez и в центре посёлка Ortakent частный бассейн занимает первое место в списке пожеланий. Эта статья кратко обобщает различия между типами бассейнов, стандарты подогрева и обслуживания, а также то, какой тип бассейна преобладает в каком районе.",
+      },
+      { type: "h2", id: "tipler", text: "Типы бассейнов: инфинити, прямоугольный, био" },
+      {
+        type: "p",
+        text: "На виллах Бодрума встречаются три основных типа бассейнов.",
+      },
+      {
+        type: "h3",
+        text: "Инфинити-бассейн (бесконечный)",
+      },
+      {
+        type: "p",
+        text: "Эффектный бассейн, одна сторона которого обращена к морю или панораме, и вода словно стекает за край. На виллах, расположенных на склоне, — особенно в Yalıkavak в сторону Tilkicik и Sandıma — это самый распространённый тип. Визуально он силён; эффект «бассейн сливается с морем» на снимках — фирменный знак инфинити-бассейна. Расходы на обслуживание на 20–30 % выше, чем у классических бассейнов, и это отражается на цене за ночь.",
+      },
+      {
+        type: "h3",
+        text: "Классический прямоугольный бассейн",
+      },
+      {
+        type: "p",
+        text: "Тип, который мы видим на 70 % вилл Бодрума. Обычно 8–12 метров в длину и 4–5 метров в ширину. Самый практичный тип для плавания; для семей с детьми можно добавить мелкую зону. Доступен выбор хлорированной или солёной воды; солёная вода мягче для кожи.",
+      },
+      {
+        type: "h3",
+        text: "Биобассейн (природный бассейн)",
+      },
+      {
+        type: "p",
+        text: "Бассейн, который очищается природными растениями и фильтрующими системами вместо химии. В Бодруме встречается редко, но некоторые бутик-виллы во внутренней части Bitez предлагают такой вариант. Он ощущается более естественным; однако зона для плавания обычно меньше.",
+      },
+      { type: "h2", id: "isitma", text: "Подогрев бассейна — нужен ли он?" },
+      {
+        type: "p",
+        text: "Даже когда в мае и октябре море тёплое, вода в бассейне затенённых вилл может держаться около 18–20 градусов; плавать без системы подогрева трудно. Подавляющее большинство премиальных вилл оснащены подогревом бассейна; об этом стоит спросить до бронирования. Подогрев обычно повышает температуру на 5–10 градусов и может добавлять 800–1 500 TL в неделю.",
+      },
+      { type: "h2", id: "bolgeler", text: "Карта бассейнов по районам" },
+      {
+        type: "ul",
+        items: [
+          "Yalıkavak Tilkicik / Sandıma — виллы на склоне с инфинити-бассейном.",
+          "Turgutreis Akyarlar — прямоугольные бассейны, обращённые на запад, к закату.",
+          "Центр Ortakent — классические прямоугольные бассейны в каменных садах.",
+          "Внутренняя часть Bitez — классические бассейны с садом; редко бутик-виллы с биобассейном.",
+          "Склоны Gündoğan — прямоугольные бассейны, защищённые от ветра.",
+          "Torba — классические семейные бассейны за линией резортов, с мелкой зоной.",
+        ],
+      },
+      { type: "h2", id: "temizlik", text: "Стандарты обслуживания и уборки" },
+      {
+        type: "p",
+        text: "На виллах с профессиональным управлением вода в бассейне проходит проверку химического состава не реже двух раз в неделю; баланс хлора и pH контролируется ежедневно. За день до заезда гостей бассейн опорожняют и чистят фильтр. Если при бронировании вам не предоставляют «график уборки бассейна», обязательно спросите об этом. В хорошо управляемой вилле вода в бассейне совершенно прозрачна, без единого пятна на дне.",
+      },
+      { type: "h2", id: "guvenlik", text: "Безопасность детей" },
+      {
+        type: "p",
+        text: "Если вы остановитесь на вилле с частным бассейном с маленькими детьми: попросите систему сигнализации у края бассейна, мелкую зону, нескользкое покрытие, спасательный круг и по возможности накрытие бассейна. Не подпускайте ребёнка к бассейну без присмотра взрослого; назначить «ответственного взрослого» у бассейна — самая безопасная практика.",
+      },
+      { type: "h2", id: "sonuc", text: "Итог" },
+      {
+        type: "p",
+        text: "Выбирая в Бодруме виллу с частным бассейном, не ограничивайтесь надписью «с бассейном»; спросите о типе бассейна, его размере, поддержке подогрева и графике обслуживания. В правильно выбранной вилле неделя у бассейна станет самым ярким воспоминанием поездки. Все виллы на нашей платформе отобраны в соответствии с этими стандартами; по любым сомнениям вы можете задать вопросы в WhatsApp.",
+      },
+    ],
+    faqDe: [
+      { q: "Worin besteht der Unterschied zwischen einem Infinity- und einem Rechteckpool?", a: "Der Infinity-Pool ist optisch eindrucksvoller; eine Kante ist offen zur Aussicht gestaltet. Der Rechteckpool ist praktischer zum Schwimmen und für Familien mit Kindern geeignet. Da die Pflegekosten beim Infinity-Pool 20–30 % höher liegen, unterscheidet sich auch der Preis." },
+      { q: "Verfügen Villen in Bodrum über eine Poolheizung?", a: "Die große Mehrheit der gehobenen Villen ja. Im Mai und Oktober sorgt sie für einen Anstieg von 5–10 °C. Auf Wunsch lassen wir Sie die Heizkosten bei der Buchung hinzufügen." },
+      { q: "Wie wird der Pool vor der Buchung gereinigt?", a: "Professionelle Teams lassen den Pool einen Tag zuvor ab und reinigen den Filter; Chlor- und pH-Wert werden täglich kontrolliert. Den Reinigungsplan können Sie bei der Buchung erfragen." },
+    ],
+    faqRu: [
+      { q: "В чём разница между инфинити-бассейном и прямоугольным?", a: "Инфинити-бассейн визуально эффектнее; одна его сторона спроектирована открытой к панораме. Прямоугольный практичнее для плавания и подходит семьям с детьми. Поскольку расходы на обслуживание инфинити-бассейна на 20–30 % выше, отличается и цена." },
+      { q: "Есть ли на виллах Бодрума подогрев бассейна?", a: "У подавляющего большинства премиальных вилл есть. В мае и октябре он повышает температуру на 5–10 градусов. По вашему запросу мы добавим стоимость подогрева при бронировании." },
+      { q: "Как чистят бассейн перед бронированием?", a: "Профессиональные команды за день до заезда опорожняют бассейн и чистят фильтр; баланс хлора и pH проверяется ежедневно. График уборки вы можете уточнить при бронировании." },
     ],
   },
 ];
