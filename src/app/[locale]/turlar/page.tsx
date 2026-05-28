@@ -37,7 +37,9 @@ export default async function Page({
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "tours" });
   const c = await getTranslations({ locale, namespace: "common" });
-  const isTr = locale === "tr";
+  const L = locale as "tr" | "en" | "de" | "ru";
+  const pick = (tr: string, en: string, de: string, ru: string) =>
+    ({ tr, en, de, ru } as Record<typeof L, string>)[L] ?? en;
 
   const tours = [
     { title: t("tour1Title"), desc: t("tour1Desc"), price: t("tour1Price"), icon: Sailboat },
@@ -48,22 +50,46 @@ export default async function Page({
 
   const faqItems = [
     {
-      q: isTr ? "Turlar her gün düzenleniyor mu?" : "Are tours daily?",
-      a: isTr
-        ? "Çoğu tur haziran-eylül arası her gün, mayıs-ekim arası haftada 3-5 gün düzenlenir. Dalış ve antik kent turları havaya göre değişebilir."
-        : "Most tours run daily from June to September and 3-5 days a week from May to October. Diving and ancient-city tours may shift with weather.",
+      q: pick(
+        "Turlar her gün düzenleniyor mu?",
+        "Are tours daily?",
+        "Finden die Touren täglich statt?",
+        "Туры проводятся каждый день?",
+      ),
+      a: pick(
+        "Çoğu tur haziran-eylül arası her gün, mayıs-ekim arası haftada 3-5 gün düzenlenir. Dalış ve antik kent turları havaya göre değişebilir.",
+        "Most tours run daily from June to September and 3-5 days a week from May to October. Diving and ancient-city tours may shift with weather.",
+        "Die meisten Touren finden von Juni bis September täglich statt, von Mai bis Oktober an 3–5 Tagen pro Woche. Tauch- und Antikstädte-Touren können sich je nach Wetter verschieben.",
+        "Большинство туров проходят ежедневно с июня по сентябрь и 3–5 дней в неделю с мая по октябрь. Дайвинг и поездки в античные города могут зависеть от погоды.",
+      ),
     },
     {
-      q: isTr ? "Villada kalan büyük grup için tur özelleştirilebilir mi?" : "Can a tour be customised for a large villa group?",
-      a: isTr
-        ? "Evet. Bir araç veya tekneyi tamamen sizin için ayırıp rotanızı isteklerinize göre kurgulayabiliriz."
-        : "Yes. We can dedicate a vehicle or boat fully to your group and design the route to your wishes.",
+      q: pick(
+        "Villada kalan büyük grup için tur özelleştirilebilir mi?",
+        "Can a tour be customised for a large villa group?",
+        "Lässt sich eine Tour für eine große Villengruppe anpassen?",
+        "Можно ли организовать тур для большой группы на вилле?",
+      ),
+      a: pick(
+        "Evet. Bir araç veya tekneyi tamamen sizin için ayırıp rotanızı isteklerinize göre kurgulayabiliriz.",
+        "Yes. We can dedicate a vehicle or boat fully to your group and design the route to your wishes.",
+        "Ja. Wir können ein Fahrzeug oder Boot ganz Ihrer Gruppe vorbehalten und die Route nach Ihren Wünschen gestalten.",
+        "Да. Мы можем выделить автомобиль или лодку только для вашей группы и составить маршрут по вашим пожеланиям.",
+      ),
     },
     {
-      q: isTr ? "Tur fiyatına neler dahil?" : "What's included in the tour price?",
-      a: isTr
-        ? "Ulaşım, öğle yemeği, rehber ve sigorta dahil. Müze giriş ücreti bazı turlar için ekstra."
-        : "Transport, lunch, guide and insurance are included. Museum entry fees are extra for some tours.",
+      q: pick(
+        "Tur fiyatına neler dahil?",
+        "What's included in the tour price?",
+        "Was ist im Tourpreis enthalten?",
+        "Что входит в стоимость тура?",
+      ),
+      a: pick(
+        "Ulaşım, öğle yemeği, rehber ve sigorta dahil. Müze giriş ücreti bazı turlar için ekstra.",
+        "Transport, lunch, guide and insurance are included. Museum entry fees are extra for some tours.",
+        "Transport, Mittagessen, Reiseleitung und Versicherung sind inbegriffen. Museumseintritt fällt bei einigen Touren zusätzlich an.",
+        "Включены транспорт, обед, гид и страховка. Входные билеты в музеи для некоторых туров оплачиваются отдельно.",
+      ),
     },
   ];
 
@@ -96,7 +122,7 @@ export default async function Page({
         subtitle={t("subtitle")}
         badge="Bodrum 2026"
         image="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=2000&q=80"
-        crumbs={[{ href: "/", label: isTr ? "Ana Sayfa" : "Home" }, { label: t("h1") }]}
+        crumbs={[{ href: "/", label: pick("Ana Sayfa", "Home", "Startseite", "Главная") }, { label: t("h1") }]}
       />
 
       <section className="section">
@@ -112,11 +138,12 @@ export default async function Page({
               subjectLine={t("h1")}
               fields={{ date: true, people: true }}
               whatsappNumber={c("whatsappNumber")}
-              whatsappTemplate={
-                isTr
-                  ? "Merhaba, Bodrum turları hakkında bilgi almak istiyorum."
-                  : "Hello, I'd like info on Bodrum tours."
-              }
+              whatsappTemplate={pick(
+                "Merhaba, Bodrum turları hakkında bilgi almak istiyorum.",
+                "Hello, I'd like info on Bodrum tours.",
+                "Guten Tag, ich hätte gern Informationen zu Bodrum-Touren.",
+                "Здравствуйте, я хотел бы узнать о турах по Бодруму.",
+              )}
             />
           </aside>
         </div>
@@ -145,7 +172,7 @@ export default async function Page({
 
       <section className="section">
         <div className="container-page max-w-4xl">
-          <h2>{isTr ? "Sıkça Sorulanlar" : "Frequently Asked Questions"}</h2>
+          <h2>{pick("Sıkça Sorulanlar", "Frequently Asked Questions", "Häufige Fragen", "Частые вопросы")}</h2>
           <div className="mt-6">
             <FAQ items={faqItems} />
           </div>

@@ -37,7 +37,9 @@ export default async function Page({
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "car" });
   const c = await getTranslations({ locale, namespace: "common" });
-  const isTr = locale === "tr";
+  const L = locale as "tr" | "en" | "de" | "ru";
+  const pick = (tr: string, en: string, de: string, ru: string) =>
+    ({ tr, en, de, ru } as Record<typeof L, string>)[L] ?? en;
 
   const classes = [
     { title: t("carClass1Title"), desc: t("carClass1Desc"), price: t("carClass1Price"), icon: Car },
@@ -50,28 +52,60 @@ export default async function Page({
 
   const faqItems = [
     {
-      q: isTr ? "Aracı havalimanından mı alacağım?" : "Do I pick up the car at the airport?",
-      a: isTr
-        ? "Tercihinize göre. Milas-Bodrum Havalimanı'nda 24/7 teslim ofisimiz var; villanıza ya da apart girişine teslim de mümkündür."
-        : "Your choice. We have a 24/7 desk at Milas-Bodrum Airport; villa or apartment delivery is also available.",
+      q: pick(
+        "Aracı havalimanından mı alacağım?",
+        "Do I pick up the car at the airport?",
+        "Übernehme ich das Auto am Flughafen?",
+        "Получаю ли я автомобиль в аэропорту?",
+      ),
+      a: pick(
+        "Tercihinize göre. Milas-Bodrum Havalimanı'nda 24/7 teslim ofisimiz var; villanıza ya da apart girişine teslim de mümkündür.",
+        "Your choice. We have a 24/7 desk at Milas-Bodrum Airport; villa or apartment delivery is also available.",
+        "Ganz nach Wunsch. Am Flughafen Milas-Bodrum haben wir einen Schalter rund um die Uhr; die Lieferung zur Villa oder Wohnung ist ebenfalls möglich.",
+        "На ваш выбор. В аэропорту Милас-Бодрум у нас стойка работает круглосуточно; доставка к вилле или апартаментам также возможна.",
+      ),
     },
     {
-      q: isTr ? "Tam kasko + trafik sigortası fiyata dahil mi?" : "Is full insurance included?",
-      a: isTr
-        ? "Evet. Tüm araçlar tam kasko ve trafik sigortası ile teslim edilir. Sınırsız kilometre kullanım hakkınız vardır."
-        : "Yes. All cars come with full collision and liability insurance, with unlimited kilometres.",
+      q: pick(
+        "Tam kasko + trafik sigortası fiyata dahil mi?",
+        "Is full insurance included?",
+        "Ist die Vollkaskoversicherung inbegriffen?",
+        "Входит ли полная страховка в стоимость?",
+      ),
+      a: pick(
+        "Evet. Tüm araçlar tam kasko ve trafik sigortası ile teslim edilir. Sınırsız kilometre kullanım hakkınız vardır.",
+        "Yes. All cars come with full collision and liability insurance, with unlimited kilometres.",
+        "Ja. Alle Fahrzeuge werden mit Vollkasko- und Haftpflichtversicherung übergeben, mit unbegrenzten Kilometern.",
+        "Да. Все автомобили предоставляются с полной страховкой КАСКО и ОСАГО, с неограниченным пробегом.",
+      ),
     },
     {
-      q: isTr ? "Minimum kiralama süresi nedir?" : "What's the minimum rental?",
-      a: isTr
-        ? "Minimum 1 gün. Haftalık ve aylık kiralamalarda %15-25 indirim uygulanır."
-        : "1 day minimum. Weekly and monthly rentals carry a 15-25% discount.",
+      q: pick(
+        "Minimum kiralama süresi nedir?",
+        "What's the minimum rental?",
+        "Wie lange ist die Mindestmietdauer?",
+        "Каков минимальный срок аренды?",
+      ),
+      a: pick(
+        "Minimum 1 gün. Haftalık ve aylık kiralamalarda %15-25 indirim uygulanır.",
+        "1 day minimum. Weekly and monthly rentals carry a 15-25% discount.",
+        "Mindestens 1 Tag. Bei Wochen- und Monatsmieten gewähren wir 15–25 % Rabatt.",
+        "Минимум 1 день. На недельную и месячную аренду действует скидка 15–25 %.",
+      ),
     },
     {
-      q: isTr ? "Yaş ve ehliyet şartı nedir?" : "Age and licence requirements?",
-      a: isTr
-        ? "21 yaş ve üzeri, en az 1 yıllık ehliyet sahibi sürücüler kiralama yapabilir. Türk veya uluslararası ehliyet kabul edilir."
-        : "Drivers aged 21+ with at least 1 year of driving experience. Turkish or international licences are accepted.",
+      q: pick(
+        "Yaş ve ehliyet şartı nedir?",
+        "Age and licence requirements?",
+        "Welche Anforderungen gelten für Alter und Führerschein?",
+        "Какие требования к возрасту и правам?",
+      ),
+      a: pick(
+        "21 yaş ve üzeri, en az 1 yıllık ehliyet sahibi sürücüler kiralama yapabilir. Türk veya uluslararası ehliyet kabul edilir.",
+        "Drivers aged 21+ with at least 1 year of driving experience. Turkish or international licences are accepted.",
+        "Fahrer ab 21 Jahren mit mindestens einem Jahr Fahrpraxis. Türkische und internationale Führerscheine werden akzeptiert.",
+        "Водители от 21 года со стажем не менее 1 года. Принимаются турецкие и международные права.",
+      ),
     },
   ];
 
@@ -104,7 +138,7 @@ export default async function Page({
         subtitle={t("subtitle")}
         badge="Bodrum 2026"
         image="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=2000&q=80"
-        crumbs={[{ href: "/", label: isTr ? "Ana Sayfa" : "Home" }, { label: t("h1") }]}
+        crumbs={[{ href: "/", label: pick("Ana Sayfa", "Home", "Startseite", "Главная") }, { label: t("h1") }]}
       />
 
       <section className="section">
@@ -120,11 +154,12 @@ export default async function Page({
               subjectLine={t("h1")}
               fields={{ date: true, pickup: true, dropoff: true }}
               whatsappNumber={c("whatsappNumber")}
-              whatsappTemplate={
-                isTr
-                  ? "Merhaba, Bodrum'da araç kiralamak istiyorum."
-                  : "Hello, I'd like to rent a car in Bodrum."
-              }
+              whatsappTemplate={pick(
+                "Merhaba, Bodrum'da araç kiralamak istiyorum.",
+                "Hello, I'd like to rent a car in Bodrum.",
+                "Guten Tag, ich möchte in Bodrum ein Auto mieten.",
+                "Здравствуйте, я хотел бы арендовать автомобиль в Бодруме.",
+              )}
             />
           </aside>
         </div>
@@ -167,7 +202,7 @@ export default async function Page({
 
       <section className="section section-soft">
         <div className="container-page max-w-4xl">
-          <h2>{isTr ? "Sıkça Sorulanlar" : "Frequently Asked Questions"}</h2>
+          <h2>{pick("Sıkça Sorulanlar", "Frequently Asked Questions", "Häufige Fragen", "Частые вопросы")}</h2>
           <div className="mt-6">
             <FAQ items={faqItems} />
           </div>
