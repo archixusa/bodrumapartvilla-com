@@ -11,6 +11,7 @@ import { MdxBody } from "@/components/MdxBody";
 import { posts, getPost } from "@/data/posts";
 import { districts } from "@/data/districts";
 import { getMdxPosts, getMdxPost } from "@/lib/mdx-blog";
+import { loc } from "@/lib/i18n-data";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://bodrumapartvilla.com";
@@ -65,26 +66,27 @@ export async function generateMetadata({
   }
   const post = getPost(slug);
   if (!post) return {};
-  const isTr = locale === "tr";
   const url =
     locale === "tr"
       ? `${SITE_URL}/blog/${post.slug}`
       : `${SITE_URL}/${locale}/blog/${post.slug}`;
+  const title = loc(locale, { tr: post.titleTr, en: post.titleEn, de: post.titleDe, ru: post.titleRu });
+  const excerpt = loc(locale, { tr: post.excerptTr, en: post.excerptEn, de: post.excerptDe, ru: post.excerptRu });
   return {
-    title: isTr ? post.metaTitleTr : post.metaTitleEn,
-    description: isTr ? post.metaDescTr : post.metaDescEn,
+    title: loc(locale, { tr: post.metaTitleTr, en: post.metaTitleEn, de: post.metaTitleDe, ru: post.metaTitleRu }),
+    description: loc(locale, { tr: post.metaDescTr, en: post.metaDescEn, de: post.metaDescDe, ru: post.metaDescRu }),
     alternates: { canonical: url },
     openGraph: {
-      title: isTr ? post.titleTr : post.titleEn,
-      description: isTr ? post.excerptTr : post.excerptEn,
+      title,
+      description: excerpt,
       url,
       type: "article",
-      images: [{ url: post.hero, width: 1600, height: 900, alt: post.titleTr }],
+      images: [{ url: post.hero, width: 1600, height: 900, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
-      title: isTr ? post.titleTr : post.titleEn,
-      description: isTr ? post.excerptTr : post.excerptEn,
+      title,
+      description: excerpt,
       images: [post.hero],
     },
   };
@@ -107,9 +109,23 @@ export default async function Page({
 
   const dt = await getTranslations({ locale, namespace: "districts" });
   const isTr = locale === "tr";
-  const title = isTr ? post.titleTr : post.titleEn;
-  const sections = isTr ? post.contentTr : post.contentEn;
-  const faqItems = isTr ? post.faqTr : post.faqEn;
+  const title = loc(locale, { tr: post.titleTr, en: post.titleEn, de: post.titleDe, ru: post.titleRu });
+  const sections =
+    locale === "de"
+      ? (post.contentDe ?? post.contentEn)
+      : locale === "ru"
+        ? (post.contentRu ?? post.contentEn)
+        : locale === "tr"
+          ? post.contentTr
+          : post.contentEn;
+  const faqItems =
+    locale === "de"
+      ? (post.faqDe ?? post.faqEn)
+      : locale === "ru"
+        ? (post.faqRu ?? post.faqEn)
+        : locale === "tr"
+          ? post.faqTr
+          : post.faqEn;
   const tocItems = sections
     .filter((s): s is Extract<typeof s, { type: "h2" }> => s.type === "h2")
     .map((s) => ({ id: s.id, text: s.text }));
@@ -131,7 +147,7 @@ export default async function Page({
         logo: { "@type": "ImageObject", url: `${SITE_URL}/logo_kare.svg` },
       },
       mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
-      description: isTr ? post.metaDescTr : post.metaDescEn,
+      description: loc(locale, { tr: post.metaDescTr, en: post.metaDescEn, de: post.metaDescDe, ru: post.metaDescRu }),
     },
     {
       "@context": "https://schema.org",
@@ -175,7 +191,7 @@ export default async function Page({
               <ChevronRight className="h-3 w-3" />
               <Link href="/blog" className="hover:underline">{t("h1")}</Link>
             </nav>
-            <span className="chip-accent">{isTr ? post.category.tr : post.category.en}</span>
+            <span className="chip-accent">{loc(locale, post.category)}</span>
             <h1 className="mt-4 max-w-3xl text-white">{title}</h1>
             <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-white/85">
               <span className="inline-flex items-center gap-1">
@@ -268,19 +284,19 @@ export default async function Page({
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={p.hero}
-                      alt={isTr ? p.titleTr : p.titleEn}
+                      alt={loc(locale, { tr: p.titleTr, en: p.titleEn, de: p.titleDe, ru: p.titleRu })}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover transition group-hover:scale-105"
                     />
                   </div>
                   <div className="space-y-2 p-5">
-                    <span className="chip">{isTr ? p.category.tr : p.category.en}</span>
+                    <span className="chip">{loc(locale, p.category)}</span>
                     <h3 className="text-base leading-snug">
-                      {isTr ? p.titleTr : p.titleEn}
+                      {loc(locale, { tr: p.titleTr, en: p.titleEn, de: p.titleDe, ru: p.titleRu })}
                     </h3>
                     <p className="line-clamp-2 text-sm text-muted">
-                      {isTr ? p.excerptTr : p.excerptEn}
+                      {loc(locale, { tr: p.excerptTr, en: p.excerptEn, de: p.excerptDe, ru: p.excerptRu })}
                     </p>
                   </div>
                 </Link>
