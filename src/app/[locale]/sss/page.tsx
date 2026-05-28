@@ -67,7 +67,7 @@ function getItems(isTr: boolean) {
       },
       {
         q: "Koleksiyonunuza villa nasıl katılır?",
-        a: "Mülk sahipleri, “Villanızı Yönetmek” sayfası üzerinden ya da konsiyerj ekibimize doğrudan yazarak başvurabilir. Başvuruyu; villanın mimari niteliği, konumu, donanımı ve mülk sahibinin işletme disiplinini gözeten kısa bir değerlendirme süreci izler. Yerinde görüş, fotoğraf belgesi ve karşılıklı beklentinin yazıya dökülmesi şarttır; kabul tek taraflı bir karar değildir.",
+        a: "Mülk sahipleri, “Villanızı Değerlendirelim” sayfası üzerinden ya da konsiyerj ekibimize doğrudan yazarak başvurabilir. Başvuruyu; villanın mimari niteliği, konumu, donanımı ve mülk sahibinin işletme disiplinini gözeten kısa bir değerlendirme süreci izler. Yerinde görüş, fotoğraf belgesi ve karşılıklı beklentinin yazıya dökülmesi şarttır; kabul tek taraflı bir karar değildir.",
       },
     ];
   }

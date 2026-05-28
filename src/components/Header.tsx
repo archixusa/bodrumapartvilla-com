@@ -43,7 +43,7 @@ export function Header() {
     { href: "/iletisim", label: t("contact") },
   ];
 
-  const ownerCtaLabel = locale === "tr" ? "Villanızı Yönetmek" : "Entrust Your Villa";
+  const ownerCtaLabel = locale === "tr" ? "Villanızı Değerlendirelim" : "Entrust Your Villa";
 
   return (
     <header

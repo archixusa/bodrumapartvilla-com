@@ -96,7 +96,7 @@ export default async function DistrictPage({
         ? `${districtName}'da villa fiyatları ne kadar?`
         : `What are villa rental prices in ${districtName}?`,
       a: isTr
-        ? `Yüksek sezonda özel havuzlu villalar gecelik 8.000 TL'den başlar; lüks segmentte 22.000 TL'ye çıkabilir. Apartlar 2.400-6.500 TL aralığında değişir. Düşük sezonda fiyatlar yaklaşık %50 düşer.`
+        ? `Yüksek sezonda özel havuzlu villalar gecelik 8.000 TL'den başlar; en üst donanımlı villalarda 22.000 TL'ye çıkabilir. Apartlar 2.400-6.500 TL aralığında değişir. Düşük sezonda fiyatlar yaklaşık %50 düşer.`
         : `In high season, private-pool villas start from 8,000 TL per night and reach 22,000 TL in the luxury segment. Apartments range 2,400-6,500 TL. Low-season prices drop around 50%.`,
     },
     {
