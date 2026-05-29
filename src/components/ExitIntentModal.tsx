@@ -86,7 +86,7 @@ const COPY: Record<string, Copy> = {
     submitting: "Wird gesendet",
     success: "Ihre Nachricht hat den Concierge erreicht.",
     error: "Bitte versuchen Sie es in Kürze erneut.",
-    close: "Schliessen",
+    close: "Schließen",
   },
   ru: {
     title: "Спланируем ваше проживание тихо",
