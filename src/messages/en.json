@@ -104,7 +104,7 @@
     "q4": "How does free cancellation work?",
     "a4": "Cancel 7 or more days before arrival for a full refund. Cancellations within 7 days are subject to a tiered fee.",
     "q5": "Do you arrange airport transfers?",
-    "a5": "Yes. private transfers from Milas-Bodrum Airport to your villa or apartment. You can request it during booking or reserve from our transfer page.",
+    "a5": "Yes. Private transfers from Milas-Bodrum Airport to your villa or apartment. You can request it during booking or reserve from our transfer page.",
     "q6": "What's the minimum stay?",
     "a6": "In high season (June-September) apartments require 3 nights minimum and villas 5 nights. Low season drops to 2 nights."
   },
@@ -286,7 +286,7 @@
   },
   "transfer": {
     "metaTitle": "Bodrum Airport Transfer | Milas-Bodrum Private Transfer 2026",
-    "metaDesc": "private transfer from Milas-Bodrum Airport to your villa or apartment. Sedan, Vito and Sprinter — door-to-door service.",
+    "metaDesc": "Private transfer from Milas-Bodrum Airport to your villa or apartment. Sedan, Vito and Sprinter — door-to-door service.",
     "h1": "Bodrum Airport Private Transfer",
     "subtitle": "From Milas-Bodrum Airport to your villa door in a private vehicle.",
     "intro1": "Milas-Bodrum Airport sits 35 km from Bodrum centre and 50 km from Yalıkavak. The first right decision of the trip is often a pre-booked private transfer — bags down, straight to the villa or apartment. Our drivers track flights and don't charge extra for late arrivals; all vehicles are air-conditioned with ample luggage space.",
@@ -378,6 +378,7 @@
   },
   "footer": {
     "tagline": "A boutique villa stay platform in Bodrum.",
+    "madeWith": "Made with care in Bodrum",
     "explore": "Explore",
     "services": "Services",
     "company": "Company",

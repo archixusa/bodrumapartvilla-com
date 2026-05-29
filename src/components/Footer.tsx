@@ -121,7 +121,7 @@ export function Footer() {
             © {year} bodrumapartvilla.com
           </MonoLabel>
           <MonoLabel className="text-muted" withLine={false}>
-            Made with care in Bodrum
+            {t("madeWith")}
           </MonoLabel>
         </div>
       </div>
